@@ -2,893 +2,705 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoLab - Академия Робототехники</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>RoLab Academy — робототехника и программирование для детей в Алматы</title>
+    <meta name="description" content="Академия робототехники RoLab в Алматы: LEGO-робототехника, Arduino, Python, Roblox, 3D-моделирование и FIRST LEGO League для детей 6–17 лет. Первый урок — бесплатно.">
+    <meta name="theme-color" content="#07111F">
+    <link rel="canonical" href="https://rolab-academy.kz/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RoLab Academy — Future Robotics Lab">
+    <meta property="og:description" content="Робототехника, программирование и 3D для детей 6–17 лет в Алматы. Запишитесь на бесплатный пробный урок.">
+    <meta property="og:image" content="pic/new/hero_robot.jpg">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="icon" href="pic/favicon.ico" sizes="any">
+    <link rel="icon" href="pic/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="pic/apple-touch-icon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" href="/pic/favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        body::-webkit-scrollbar {
-            display: none;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        section[id] {
-            scroll-margin-top: 5.5rem;
-        }
-        .hero-bg {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.75)), url('pic/background.png');
-            background-size: cover;
-            background-position: center center;
-        }
-        .bg-gradient-logo {
-            background-image: linear-gradient(to right, #00A9FF, #A033FF);
-        }
-        .text-gradient-logo {
-            background: linear-gradient(to right, #00A9FF, #A033FF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .text-shadow-strong {
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        #course-modal-content h4 {
-             font-family: 'Montserrat', sans-serif;
-             font-size: 1.25rem;
-             font-weight: 700;
-             margin-top: 1.5rem;
-             margin-bottom: 0.5rem;
-             color: #1f2937;
-        }
-         #course-modal-content p {
-             margin-bottom: 0.5rem;
-         }
-         #course-modal-content ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-        select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A033FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1.5em 1.5em;
-            padding-right: 3.5rem;
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="pic/new/hero_robot.jpg">
+    <link rel="stylesheet" href="css/styles.css">
 
-    <header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
-        <div class="container mx-auto px-6 sm:px-6 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3 transition-transform duration-300 hover:scale-105">
-                <img src="pic/logo.PNG" alt="Логотип RoLab" class="h-12 md:h-16 w-auto rounded-md" onerror="this.onerror=null; this.src='https://placehold.co/200x80/e2e8f0/475569?text=RoLab';">
-            </a>
-            
-            <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#about" class="text-gray-600 hover:text-blue-500 transition duration-300 font-medium" data-lang-key="nav_about">О нас</a>
-                <a href="#courses" class="text-gray-600 hover:text-blue-500 transition duration-300 font-medium" data-lang-key="nav_courses">Курсы</a>
-                <a href="#reviews" class="text-gray-600 hover:text-blue-500 transition duration-300 font-medium" data-lang-key="nav_reviews">Отзывы</a>
-                <a href="#branches" class="text-gray-600 hover:text-blue-500 transition duration-300 font-medium" data-lang-key="nav_branches">Адреса</a>
-                
-                <div class="relative" id="lang-switcher">
-                    <button type="button" id="lang-button" class="flex items-center text-gray-600 hover:text-blue-500 transition duration-300 font-medium">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9" />
-                        </svg>
-                        <span id="current-lang" class="ml-2 font-bold">RU</span>
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 z-50 border">
-                        <a href="#" class="lang-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="ru">Русский</a>
-                        <a href="#" class="lang-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
-                        <a href="#" class="lang-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="kz">Қазақша</a>
-                    </div>
-                </div>
-                
-                <a href="#contact" class="bg-gradient-logo hover:opacity-90 text-white font-bold py-2 px-5 rounded-lg transition duration-300" data-lang-key="nav_signup_btn">Записаться</a>
-            </nav>
-            
-            <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
-                <svg id="menu-open-icon" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <svg id="menu-close-icon" class="w-7 h-7 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "RoLab Academy",
+        "url": "https://rolab-academy.kz/",
+        "logo": "https://rolab-academy.kz/pic/logo-transparent.png",
+        "telephone": "+77770418041",
+        "email": "info@rolab-academy.kz",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "проспект Абая 52в, БЦ Bayzak, 6 этаж, офис 616",
+            "addressLocality": "Алматы",
+            "addressCountry": "KZ"
+        },
+        "sameAs": ["https://www.instagram.com/rolab.academy/", "https://t.me/rolabacademy"]
+    }
+    </script>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav" id="nav">
+    <div class="container">
+        <a href="#top" class="nav-logo" aria-label="RoLab Academy — на главную">
+            <span class="logo-chip"><img src="pic/logo-transparent.png" alt="RoLab Academy" width="120" height="48"></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Основная навигация">
+            <a href="#about">О нас</a>
+            <a href="#courses">Программы</a>
+            <a href="#projects">Проекты</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#branches">Адреса</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="tel:+77770418041" class="nav-phone">+7 777 041 80 41</a>
+            <a href="#contact" class="btn btn-primary btn-sm" id="nav-cta">Бесплатный урок</a>
+            <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+                <span></span><span></span><span></span>
             </button>
         </div>
+    </div>
+</header>
 
-        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white/95 backdrop-blur-sm border-t border-gray-200 px-6 pb-4">
-            <a href="#about" class="mobile-menu-link block py-2 text-lg text-gray-700 hover:text-blue-500 transition duration-300" data-lang-key="nav_about">О нас</a>
-            <a href="#courses" class="mobile-menu-link block py-2 text-lg text-gray-700 hover:text-blue-500 transition duration-300" data-lang-key="nav_courses">Курсы</a>
-            <a href="#reviews" class="mobile-menu-link block py-2 text-lg text-gray-700 hover:text-blue-500 transition duration-300" data-lang-key="nav_reviews">Отзывы</a>
-            <a href="#branches" class="mobile-menu-link block py-2 text-lg text-gray-700 hover:text-blue-500 transition duration-300" data-lang-key="nav_branches">Адреса</a>
-            
-            <div class="relative mt-3 mb-3" id="lang-switcher-mobile">
-                <button type="button" id="lang-button-mobile" class="w-full flex justify-center items-center text-gray-700 font-medium py-3 px-4 border rounded-lg bg-gray-50">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9" /></svg>
-                    <span id="current-lang-mobile" class="ml-2">Русский</span>
-                    <svg class="w-5 h-5 ml-auto text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-                <div id="lang-dropdown-mobile" class="hidden absolute left-0 right-0 mt-2 w-full bg-white rounded-md shadow-lg py-1 z-50 border">
-                    <a href="#" class="lang-option-mobile block px-4 py-2 text-lg text-center text-gray-700 hover:bg-gray-100" data-lang="ru">Русский</a>
-                    <a href="#" class="lang-option-mobile block px-4 py-2 text-lg text-center text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
-                    <a href="#" class="lang-option-mobile block px-4 py-2 text-lg text-center text-gray-700 hover:bg-gray-100" data-lang="kz">Қазақша</a>
-                </div>
-            </div>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a href="#about" class="m-link">О нас</a>
+    <a href="#courses" class="m-link">Программы</a>
+    <a href="#projects" class="m-link">Проекты</a>
+    <a href="#reviews" class="m-link">Отзывы</a>
+    <a href="#branches" class="m-link">Адреса</a>
+    <a href="#contact" class="btn btn-primary m-link-btn" id="mobile-cta">Записаться на бесплатный урок</a>
+    <div class="m-contacts">
+        <a href="tel:+77770418041">+7 777 041 80 41</a>
+        <span>пр. Абая 52в, БЦ Bayzak, 6 этаж</span>
+    </div>
+</div>
 
-            <a href="#contact" class="mobile-menu-link block bg-gradient-logo hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center text-lg" data-lang-key="nav_signup_btn">Записаться</a>
-        </div>
-    </header>
+<main id="top">
 
-    <main>
-        <section class="hero-bg flex items-center justify-center min-h-[calc(100vh-80px)] py-12">
-            <div class="container mx-auto px-6 sm:px-6 text-center">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-4 leading-tight" data-aos="fade-up">
-                    <span data-lang-key="hero_title">Превратите увлечение гаджетами<br class="hidden sm:block"> в </span><span class="text-gradient-logo" data-lang-key="hero_title_span">профессию будущего</span>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero-grid-bg"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <svg class="circuit" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+                <linearGradient id="circuitGrad" x1="0" x2="1">
+                    <stop offset="0" stop-color="#22D3EE" stop-opacity=".1"/>
+                    <stop offset=".5" stop-color="#159BFF" stop-opacity=".7"/>
+                    <stop offset="1" stop-color="#8B35FF" stop-opacity=".1"/>
+                </linearGradient>
+            </defs>
+            <path d="M0 720 H260 L320 660 H520 L560 620"/>
+            <path d="M0 800 H180 L240 860 H620"/>
+            <path d="M1440 140 H1180 L1120 200 H960 L920 240"/>
+            <path d="M1440 260 H1260 L1220 300 H1080"/>
+            <path d="M1440 760 H1240 L1180 700 H1020"/>
+            <path d="M80 0 V120 L140 180 V300"/>
+            <circle cx="560" cy="620" r="3"/>
+            <circle cx="620" cy="860" r="3"/>
+            <circle cx="920" cy="240" r="3"/>
+            <circle cx="1080" cy="300" r="3"/>
+            <circle cx="1020" cy="700" r="3"/>
+            <circle cx="140" cy="300" r="3"/>
+        </svg>
+        <canvas id="particles" aria-hidden="true"></canvas>
+
+        <div class="container">
+            <div class="hero-copy">
+                <div class="badge reveal"><b>1-й урок бесплатно</b> Академия технологий в Алматы</div>
+                <h1 id="hero-title" class="hero-title">
+                    <span class="split-line"><span style="--d:.1s">Собираем роботов.</span></span>
+                    <span class="split-line"><span style="--d:.2s">Пишем код.</span></span>
+                    <span class="split-line"><span style="--d:.3s">Растим <span class="grad-text">инженеров будущего.</span></span></span>
                 </h1>
-                <p class="text-base sm:text-lg lg:text-xl text-gray-700 mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200" data-lang-key="hero_subtitle">
-                    В академии RoLab ваш ребенок научится создавать и программировать роботов, разовьет логику и подготовится к востребованной IT-специальности.
+                <p class="hero-lead reveal" style="--d:.5s">
+                    LEGO-робототехника, Arduino, Python, Roblox и 3D-моделирование для детей 6–17 лет.
+                    Каждый модуль заканчивается настоящим проектом, которым ребёнок гордится.
                 </p>
-                <a href="#contact" class="bg-gradient-logo hover:opacity-90 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 text-base sm:text-lg rounded-lg transition duration-300 inline-block transform hover:scale-105 shadow-lg shadow-purple-500/30" data-aos="fade-up" data-aos-delay="400" data-lang-key="hero_button">
-                    Записаться на пробный урок
-                </a>
-            </div>
-        </section>
-
-        <section id="about" class="py-16 sm:py-20 bg-white">
-            <div class="container mx-auto px-6 sm:px-6">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900" data-lang-key="about_title">Наши курсы идеально подойдут, если ваш ребенок:</h2>
-                    <p class="text-gray-500 mt-2" data-lang-key="about_subtitle">Узнайте себя и подарите ребенку полезное хобби.</p>
+                <div class="hero-ctas reveal" style="--d:.6s">
+                    <a href="#contact" class="btn btn-primary" id="hero-cta-primary">
+                        Записаться на бесплатный урок
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#courses" class="btn btn-ghost" id="hero-cta-secondary">Подобрать программу</a>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-gray-50 p-6 rounded-xl text-center border border-gray-200 hover:border-blue-400 hover:shadow-xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
-                        <div class="text-blue-500 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg></div>
-                        <h3 class="text-xl font-bold mb-2 text-gray-900" data-lang-key="about_card1_title">Проводит много времени в телефоне</h3>
-                        <p class="text-gray-600" data-lang-key="about_card1_text">Мы направим его интерес к технологиям в созидательное русло.</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-xl text-center border border-gray-200 hover:border-blue-400 hover:shadow-xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
-                        <div class="text-blue-500 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg></div>
-                        <h3 class="text-xl font-bold mb-2 text-gray-900" data-lang-key="about_card2_title">Любит LEGO и конструкторы</h3>
-                        <p class="text-gray-600" data-lang-key="about_card2_text">У нас он сможет "оживлять" свои модели с помощью кода.</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-xl text-center border border-gray-200 hover:border-blue-400 hover:shadow-xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
-                        <div class="text-blue-500 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
-                        <h3 class="text-xl font-bold mb-2 text-gray-900" data-lang-key="about_card3_title">Мечтает создавать игры и роботов</h3>
-                        <p class="text-gray-600" data-lang-key="about_card3_text">Мы дадим ему все необходимые знания и инструменты для этого.</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-xl text-center border border-gray-200 hover:border-blue-400 hover:shadow-xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
-                        <div class="text-blue-500 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg></div>
-                        <h3 class="text-xl font-bold mb-2 text-gray-900" data-lang-key="about_card4_title">Хочет получить профессию будущего</h3>
-                        <p class="text-gray-600" data-lang-key="about_card4_text">Навыки робототехники и программирования — ключ к успеху в XXI веке.</p>
-                    </div>
+                <div class="hero-metrics reveal" style="--d:.75s">
+                    <div class="metric"><strong>6–17</strong><span>лет — возраст<br>учеников</span></div>
+                    <div class="metric"><strong data-count="8">8</strong><span>программ<br>обучения</span></div>
+                    <div class="metric"><strong>2 ч</strong><span>длится одно<br>занятие</span></div>
+                    <div class="metric"><strong>0 ₸</strong><span>стоит пробный<br>урок</span></div>
                 </div>
             </div>
-        </section>
 
-        <section id="courses" class="py-16 sm:py-20 bg-gray-50">
-            <div class="container mx-auto px-6 sm:px-6">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900" data-lang-key="courses_title">Наши программы обучения</h2>
-                    <p class="text-gray-500 mt-2" data-lang-key="courses_subtitle">Подберем группу под любой возраст и уровень подготовки.</p>
+            <div class="hero-visual reveal" id="hero-visual" style="--d:.3s">
+                <div class="ring"></div>
+                <div class="ring r2"></div>
+                <img class="hero-fallback" src="pic/new/hero_robot.jpg" alt="Дружелюбный робот RoLab" width="600" height="600" fetchpriority="high">
+                <div id="hero-3d" aria-hidden="true"></div>
+                <div class="float-chip chip-a">
+                    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 14h.01M15 14h.01"/></svg></span>
+                    <div><b>Первый робот</b><small>уже на пробном уроке</small></div>
                 </div>
-                
-                <div class="relative">
-                    <div class="flex space-x-6 overflow-x-auto pb-6 no-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:space-x-0">
-                        
-                        <div class="flex-shrink-0 w-4/5 sm:w-2/3 md:w-auto bg-white rounded-xl overflow-hidden flex flex-col border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up">
-                            <div class="relative h-48">
-                                <img src="https://images.pexels.com/photos/8566472/pexels-photo-8566472.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Ребенок собирает робота" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40"></div>
-                                <h3 class="absolute inset-0 flex items-center justify-center text-white text-3xl sm:text-4xl font-black text-center p-4 text-shadow-strong" data-lang-key="course_robotics_hero">Робототехника</h3>
-                            </div>
-                            <div class="p-6 flex-grow flex flex-col">
-                                <h4 class="text-xl font-bold mb-2 text-blue-600" data-lang-key="course_robotics_title">Робототехника для всех</h4>
-                                <p class="text-gray-600 mb-4 flex-grow" data-lang-key="course_robotics_desc">Дети учатся собирать и программировать настоящих роботов, развивая логику и инженерное мышление.</p>
-                                <div class="text-sm space-y-1 mb-4 text-gray-700">
-                                    <p data-lang-key="course_robotics_schedule"><strong>Расписание (СБ/ВС):</strong> 11:00-13:00, 13:30-15:30, 16:00-18:00</p>
-                                    <p data-lang-key="course_robotics_price"><strong>Стоимость:</strong> 32000₸ (1 раз/нед) | 50000₸ (2 раза/нед)</p>
-                                </div>
-                                <button class="open-course-modal mt-auto w-full text-center bg-gray-200 hover:bg-gradient-logo hover:text-white text-gray-800 font-bold py-3 px-4 rounded-lg transition-all duration-300 block" data-course="robotics" data-lang-key="course_btn_details">Подробнее</button>
-                            </div>
-                        </div>
-
-                        <div class="flex-shrink-0 w-4/5 sm:w-2/3 md:w-auto bg-white rounded-xl overflow-hidden flex flex-col border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
-                             <div class="relative h-48">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7aQmIq0Zj8LJbg3l2I4TFHxOzL-YadIFlEQ&s" alt="Плата Arduino с проводами" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40"></div>
-                                <h3 class="absolute inset-0 flex items-center justify-center text-white text-3xl sm:text-4xl font-black text-center p-4 text-shadow-strong" data-lang-key="course_arduino_hero">Arduino</h3>
-                            </div>
-                            <div class="p-6 flex-grow flex flex-col">
-                                <h4 class="text-xl font-bold mb-2" style="color: #86198f;" data-lang-key="course_arduino_title">Программирование Arduino</h4>
-                                <p class="text-gray-600 mb-4 flex-grow" data-lang-key="course_arduino_desc">Курс для тех, кто хочет почувствовать себя инженером, собирая электронные схемы и оживляя их программами.</p>
-                                <div class="text-sm space-y-1 mb-4 text-gray-700">
-                                    <p data-lang-key="course_arduino_schedule"><strong>Расписание (ВС):</strong> 13:30-15:30</p>
-                                    <p data-lang-key="course_arduino_price"><strong>Стоимость:</strong> 32000₸ (1 раз/нед)</p>
-                                </div>
-                                <button class="open-course-modal mt-auto w-full text-center bg-gray-200 hover:bg-gradient-logo hover:text-white text-gray-800 font-bold py-3 px-4 rounded-lg transition-all duration-300 block" data-course="arduino" data-lang-key="course_btn_details">Подробнее</button>
-                            </div>
-                        </div>
-
-                         <div class="flex-shrink-0 w-4/5 sm:w-2/3 md:w-auto bg-white rounded-xl overflow-hidden flex flex-col border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
-                            <div class="relative h-48">
-                                <img src="https://mlnnvpgh2cg7.i.optimole.com/cb:B5Nw.32fcf/w:392/h:244/q:mauto/dpr:2.6/f:best/https://www.lavnercampsandprograms.com/wp-content/uploads/learn-the-fundamentals-of-roblox-studio.png" alt="Ребенок играет на ноутбуке" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40"></div>
-                                <h3 class="absolute inset-0 flex items-center justify-center text-white text-3xl sm:text-4xl font-black text-center p-4 text-shadow-strong" data-lang-key="course_roblox_hero">Roblox</h3>
-                            </div>
-                            <div class="p-6 flex-grow flex flex-col">
-                                <h4 class="text-xl font-bold mb-2" style="color: #c53030;" data-lang-key="course_roblox_title">Разработка игр в Roblox</h4>
-                                <p class="text-gray-600 mb-4 flex-grow" data-lang-key="course_roblox_desc">Дети любят играть в Roblox, а у нас они учатся создавать свои собственные игры, придумывая миры и прописывая правила.</p>
-                                <div class="text-sm space-y-1 mb-4 text-gray-700">
-                                    <p data-lang-key="course_roblox_schedule"><strong>Расписание (ВС):</strong> 16:00-18:00</p>
-                                    <p data-lang-key="course_roblox_price"><strong>Стоимость:</strong> 32000₸ (1 раз/нед)</p>
-                                </div>
-                                <button class="open-course-modal mt-auto w-full text-center bg-gray-200 hover:bg-gradient-logo hover:text-white text-gray-800 font-bold py-3 px-4 rounded-lg transition-all duration-300 block" data-course="roblox" data-lang-key="course_btn_details">Подробнее</button>
-                            </div>
-                        </div>
-                        
-                        <div class="flex-shrink-0 w-4/5 sm:w-2/3 md:w-auto bg-white rounded-xl overflow-hidden flex flex-col border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up">
-                            <div class="relative h-48">
-                                <img src="https://evermotion.org/files/publications_images/Advanced_3D_modeling.jpeg" alt="Абстрактная 3D модель" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40"></div>
-                                <h3 class="absolute inset-0 flex items-center justify-center text-white text-3xl sm:text-4xl font-black text-center p-4 text-shadow-strong" data-lang-key="course_3d_hero">3D-моделирование</h3>
-                            </div>
-                            <div class="p-6 flex-grow flex flex-col">
-                                <h4 class="text-xl font-bold mb-2" style="color: #2c7a7b;" data-lang-key="course_3d_title">3D-моделирование</h4>
-                                <p class="text-gray-600 mb-4 flex-grow" data-lang-key="course_3d_desc">На курсе дети учатся создавать объекты в 3D — от простых фигур до целых персонажей, машин и домов.</p>
-                                <div class="text-sm space-y-1 mb-4 text-gray-700">
-                                    <p data-lang-key="course_3d_schedule"><strong>Расписание (СБ):</strong> 13:30-15:30, 16:00-18:00</p>
-                                    <p data-lang-key="course_3d_price"><strong>Стоимость:</strong> 32000₸ (1 раз/нед)</p>
-                                </div>
-                                <button class="open-course-modal mt-auto w-full text-center bg-gray-200 hover:bg-gradient-logo hover:text-white text-gray-800 font-bold py-3 px-4 rounded-lg transition-all duration-300 block" data-course="3d" data-lang-key="course_btn_details">Подробнее</button>
-                            </div>
-                        </div>
-                        
-                         <div class="flex-shrink-0 w-4/5 sm:w-2/3 md:w-auto bg-white rounded-xl overflow-hidden flex flex-col border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
-                            <div class="relative h-48">
-                                <img src="https://images.genai.works/python_blog_image_61a20e45fd.jpg" alt="Код на экране" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40"></div>
-                                <h3 class="absolute inset-0 flex items-center justify-center text-white text-3xl sm:text-4xl font-black text-center p-4 text-shadow-strong" data-lang-key="course_python_hero">Python</h3>
-                            </div>
-                            <div class="p-6 flex-grow flex flex-col">
-                                <h4 class="text-xl font-bold mb-2" style="color: #b7791f;" data-lang-key="course_python_title">Python для детей</h4>
-                                <p class="text-gray-600 mb-4 flex-grow" data-lang-key="course_python_desc">Один из самых популярных языков программирования, на котором дети учатся думать как программисты и создавать первые игры.</p>
-                                <div class="text-sm space-y-1 mb-4 text-gray-700">
-                                    <p data-lang-key="course_python_schedule"><strong>Расписание (СБ):</strong> 13:30-15:30, 16:00-18:00</p>
-                                    <p data-lang-key="course_python_price"><strong>Стоимость:</strong> 32000₸ (1 раз/нед)</p>
-                                </div>
-                                 <button class="open-course-modal mt-auto w-full text-center bg-gray-200 hover:bg-gradient-logo hover:text-white text-gray-800 font-bold py-3 px-4 rounded-lg transition-all duration-300 block" data-course="python" data-lang-key="course_btn_details">Подробнее</button>
-                            </div>
-                        </div>
-                        
-                        <div class="flex-shrink-0 w-4/5 sm:w-2/3 md:w-auto rounded-xl bg-gradient-logo p-0.5 shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(160,51,255,0.4)]" data-aos="fade-up" data-aos-delay="200">
-                            <div class="rounded-lg h-full flex flex-col bg-white">
-                                <div class="text-center py-2 bg-gradient-logo text-white font-bold" data-lang-key="course_fll_banner">ДЛЯ АМБИЦИОЗНЫХ</div>
-                                <div class="relative h-48">
-                                    <img src="pic/fll.jpg" alt="Дети на соревновании FIRST LEGO League" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x200/e2e8f0/475569?text=FLL';">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                                    <h3 class="absolute inset-0 flex items-center justify-center text-white text-6xl sm:text-8xl font-black text-center p-4 text-shadow-strong">FLL</h3>
-                                </div>
-                                <div class="p-6 flex-grow flex flex-col">
-                                    <h4 class="text-xl font-bold mb-2 text-gradient-logo" data-lang-key="course_fll_title">Соревновательная робототехника</h4>
-                                    <p class="text-gray-600 mb-4 flex-grow" data-lang-key="course_fll_desc">Для тех, кто хочет участвовать в международных соревнованиях FIRST LEGO League, развивая командную работу и инженерное мышление.</p>
-                                    <div class="text-sm space-y-1 mb-4 text-gray-700">
-                                        <p data-lang-key="course_fll_price_explore"><strong>Explore (6-10 лет):</strong> 50000₸ (2 раза/нед)</p>
-                                        <p data-lang-key="course_fll_price_challenge"><strong>Challenge (9-16 лет):</strong> 70000₸ (3 раза/нед)</p>
-                                    </div>
-                                    <button class="open-course-modal mt-auto w-full text-center bg-gradient-logo hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition duration-300 block" data-course="fll" data-lang-key="course_btn_details">Подробнее</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                         <div class="flex-shrink-0 w-4/5 sm:w-2/3 md:w-auto bg-white rounded-xl overflow-hidden flex flex-col border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up">
-                             <div class="relative h-48">
-                                <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Взрослые люди за компьютерами" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40"></div>
-                                <h3 class="absolute inset-0 flex items-center justify-center text-white text-3xl sm:text-4xl font-black text-center p-4 text-shadow-strong" data-lang-key="course_adults_hero">Для взрослых</h3>
-                            </div>
-                            <div class="p-6 flex-grow flex flex-col">
-                                <h4 class="text-xl font-bold mb-2" style="color: #4a5568;" data-lang-key="course_adults_title">Компьютерная грамотность</h4>
-                                <p class="text-gray-600 mb-4 flex-grow" data-lang-key="course_adults_desc">Помогает уверенно чувствовать себя в мире технологий: от базовых программ до онлайн-банкинга и безопасности в интернете.</p>
-                                <div class="text-sm space-y-1 mb-4 text-gray-700">
-                                    <p data-lang-key="course_adults_schedule"><strong>Расписание:</strong> Вечер, по договоренности</p>
-                                    <p data-lang-key="course_adults_price"><strong>Стоимость:</strong> 32000₸ (1 раз/нед) | 50000₸ (2 раза/нед)</p>
-                                </div>
-                                <button class="open-course-modal mt-auto w-full text-center bg-gray-200 hover:bg-gradient-logo hover:text-white text-gray-800 font-bold py-3 px-4 rounded-lg transition-all duration-300 block" data-course="adults" data-lang-key="course_btn_details">Подробнее</button>
-                            </div>
-                        </div>
-                        
-                        <div class="flex-shrink-0 w-4/5 sm:w-2/3 md:w-auto bg-white rounded-xl overflow-hidden flex flex-col border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
-                            <div class="relative h-48">
-                                <img src="pic/teacherprep.JPG" alt="Преподаватель объясняет материал" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x200/e2e8f0/475569?text=Teacher+Prep';">
-                                <div class="absolute inset-0 bg-black/40"></div>
-                                <h3 class="absolute inset-0 flex items-center justify-center text-white text-3xl sm:text-4xl font-black text-center p-4 text-shadow-strong" data-lang-key="course_teachers_hero">Для преподавателей</h3>
-                            </div>
-                            <div class="p-6 flex-grow flex flex-col">
-                                <h4 class="text-xl font-bold mb-2" style="color: #2d3748;" data-lang-key="course_teachers_title">Подготовка преподавателей</h4>
-                                <p class="text-gray-600 mb-4 flex-grow" data-lang-key="course_teachers_desc">Курс для тех, кто хочет стать наставником в мире технологий. Обучаем техническим основам и методике работы с детьми.</p>
-                                <div class="text-sm space-y-1 mb-4 text-gray-700">
-                                    <p data-lang-key="course_teachers_schedule"><strong>Расписание:</strong> Будни, вечер</p>
-                                    <p data-lang-key="course_teachers_price"><strong>Стоимость:</strong> 300 000₸ за курс</p>
-                                </div>
-                                <button class="open-course-modal mt-auto w-full text-center bg-gray-200 hover:bg-gradient-logo hover:text-white text-gray-800 font-bold py-3 px-4 rounded-lg transition-all duration-300 block" data-course="teachers" data-lang-key="course_btn_details">Подробнее</button>
-                            </div>
-                        </div>
-
-                    </div>
+                <div class="float-chip chip-b">
+                    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span>
+                    <div><b>FIRST LEGO League</b><small>готовим команды</small></div>
                 </div>
+                <span class="hero-hint">Наведите курсор — робот следит за вами 👀</span>
             </div>
-        </section>
-
-        <section id="reviews" class="py-16 sm:py-20 bg-white">
-            <div class="container mx-auto px-6 sm:px-6">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900" data-lang-key="reviews_title">Что говорят наши ученики и их родители</h2>
-                    <p class="text-gray-500 mt-2" data-lang-key="reviews_subtitle">Нам доверяют самое ценное.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl" data-aos="fade-up">
-                        <div class="flex items-center mb-4">
-                            <img src="https://placehold.co/100x100/F9A8D4/1E293B?text=Е" alt="Аватар" class="w-16 h-16 rounded-full mr-4">
-                            <div>
-                                <h4 class="font-bold text-lg text-gray-900">Елена Лось</h4>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 italic" data-lang-key="review1_text">"Сын ходит не первый год: сначала попросился на робототехнику, потом решил программированием заниматься. Каждый раз бежит на занятие, потому что очень нравится)))"</p>
-                    </div>
-                    <div class="bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                        <div class="flex items-center mb-4">
-                            <img src="https://placehold.co/100x100/A5B4FC/1E293B?text=AN" alt="Аватар" class="w-16 h-16 rounded-full mr-4">
-                            <div>
-                                <h4 class="font-bold text-lg text-gray-900">Arshidin Nassyrov</h4>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 italic" data-lang-key="review2_text">"Недавно начали ходить сюда. Ребенку нравится, ребята общительные. Спасибо 👍"</p>
-                    </div>
-                     <div class="bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                        <div class="flex items-center mb-4">
-                            <img src="https://placehold.co/100x100/86EFAC/1E293B?text=AA" alt="Аватар" class="w-16 h-16 rounded-full mr-4">
-                            <div>
-                                <h4 class="font-bold text-lg text-gray-900">Aida Aitkalieva</h4>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 italic" data-lang-key="review3_text">"Ребёнок занимается уже давно, нам все нравится 🙏"</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="branches" class="py-16 sm:py-20 bg-gray-50">
-            <div class="container mx-auto px-6 sm:px-6">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900" data-lang-key="branches_title">Наши адреса</h2>
-                    <p class="text-gray-500 mt-2" data-lang-key="branches_subtitle">Выберите удобное для вас местоположение.</p>
-                </div>
-                <div class="flex justify-center">
-                    <div class="w-full max-w-4xl rounded-xl bg-gradient-logo p-0.5 shadow-xl" data-aos="fade-up">
-                       <div class="bg-white rounded-lg p-6 h-full flex flex-col items-center justify-center">
-                        <div id="schedule-toggle-button" class="cursor-pointer w-full">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-2xl lg:text-3xl font-bold text-gradient-logo" data-lang-key="branch_main_title">Головной офис "Байзак"</h3>
-                                    <p class="text-gray-600 mt-2"><strong data-lang-key="address_word">Адрес:</strong> проспект Абая 52в, 6 этаж, 616 офис</p>
-                                </div>
-                                <svg id="schedule-arrow" class="w-6 h-6 text-purple-500 transition-transform duration-300 md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                                </svg>
-                            </div>
-                            <p class="text-blue-500 text-sm mt-2 md:hidden" data-lang-key="branch_toggle_schedule">Показать/скрыть расписание</p>
-                        </div>
-                        <div id="schedule-details" class="divide-y divide-gray-200 mt-4 hidden md:block w-full max-w-xl mx-auto">
-                            <div class="py-3 flex flex-col sm:flex-row sm:justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-gray-900" data-lang-key="schedule_robotics_title">Робототехника (все возраста)</h4>
-                                    <p class="text-sm text-gray-500 mt-1" data-lang-key="schedule_robotics_time">СБ/ВС: 11:00-13:00, 13:30-15:30, 16:00-18:00</p>
-                                </div>
-                                <div class="text-left sm:text-right mt-2 sm:mt-0">
-                                    <p class="font-semibold text-gray-800 text-sm" data-lang-key="schedule_robotics_price1">32000₸ <span class="font-normal">/ 1 р. в нед.</span></p>
-                                    <p class="font-semibold text-gray-800 text-sm mt-1" data-lang-key="schedule_robotics_price2">50000₸ <span class="font-normal">/ 2 р. в нед.</span></p>
-                                </div>
-                            </div>
-                            <div class="py-3 flex flex-col sm:flex-row sm:justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-gray-900" data-lang-key="schedule_arduino_title">Ардуино</h4>
-                                    <p class="text-sm text-gray-500 mt-1" data-lang-key="schedule_arduino_time">Воскресенье: 13:30-15:30</p>
-                                </div>
-                                <p class="font-semibold text-gray-800 text-sm mt-2 sm:mt-0" data-lang-key="schedule_arduino_price">32000₸ <span class="font-normal">/ месяц</span></p>
-                            </div>
-                            <div class="py-3 flex flex-col sm:flex-row sm:justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-gray-900" data-lang-key="schedule_roblox_title">Разработка игр в Roblox</h4>
-                                    <p class="text-sm text-gray-500 mt-1" data-lang-key="schedule_roblox_time">Воскресенье: 16:00-18:00</p>
-                                </div>
-                                <p class="font-semibold text-gray-800 text-sm mt-2 sm:mt-0" data-lang-key="schedule_roblox_price">32000₸ <span class="font-normal">/ месяц</span></p>
-                            </div>
-                            <div class="py-3 flex flex-col sm:flex-row sm:justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-gray-900" data-lang-key="schedule_python_title">Программирование на Python</h4>
-                                    <p class="text-sm text-gray-500 mt-1" data-lang-key="schedule_python_time">Суббота: 13:30-15:30, 16:00-18:00</p>
-                                </div>
-                                <p class="font-semibold text-gray-800 text-sm mt-2 sm:mt-0" data-lang-key="schedule_python_price">32000₸ <span class="font-normal">/ месяц</span></p>
-                            </div>
-                            <div class="py-3 flex flex-col sm:flex-row sm:justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-gray-900" data-lang-key="schedule_3d_title">3D Моделирование</h4>
-                                    <p class="text-sm text-gray-500 mt-1" data-lang-key="schedule_3d_time">Суббота: 13:30-15:30, 16:00-18:00</p>
-                                </div>
-                                <p class="font-semibold text-gray-800 text-sm mt-2 sm:mt-0" data-lang-key="schedule_3d_price">32000₸ <span class="font-normal">/ месяц</span></p>
-                            </div>
-                            <div class="py-3 flex flex-col sm:flex-row sm:justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-gray-900" data-lang-key="schedule_fll_title">Соревновательная робототехника</h4>
-                                    <p class="text-sm text-gray-500 mt-1" data-lang-key="schedule_fll_time">Время оговаривается с командой</p>
-                                </div>
-                                <div class="text-left sm:text-right mt-2 sm:mt-0">
-                                    <p class="font-semibold text-gray-800 text-sm" data-lang-key="schedule_fll_price_explore">Explore: 50000₸</p>
-                                    <p class="font-semibold text-gray-800 text-sm mt-1" data-lang-key="schedule_fll_price_challenge">Challenge: 70000₸</p>
-                                </div>
-                            </div>
-                            <div class="py-3 flex flex-col sm:flex-row sm:justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-gray-900" data-lang-key="schedule_adults_title">Комп. грамотность (для взрослых)</h4>
-                                    <p class="text-sm text-gray-500 mt-1" data-lang-key="schedule_adults_time">Вечер, по договоренности</p>
-                                </div>
-                                <div class="text-left sm:text-right mt-2 sm:mt-0">
-                                    <p class="font-semibold text-gray-800 text-sm" data-lang-key="schedule_adults_price1">32000₸ <span class="font-normal">/ 1 р. в нед.</span></p>
-                                    <p class="font-semibold text-gray-800 text-sm mt-1" data-lang-key="schedule_adults_price2">50000₸ <span class="font-normal">/ 2 р. в нед.</span></p>
-                                </div>
-                            </div>
-                            <div class="pt-3 flex flex-col sm:flex-row sm:justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-gray-900" data-lang-key="schedule_teachers_title">Курс для преподавателей</h4>
-                                    <p class="text-sm text-gray-500 mt-1" data-lang-key="schedule_teachers_time">Будни, вечернее время</p>
-                                </div>
-                                <p class="font-semibold text-gray-800 text-sm mt-2 sm:mt-0" data-lang-key="schedule_teachers_price">300000₸ <span class="font-normal">/ за курс</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-16 sm:py-20">
-            <div class="container mx-auto px-6 sm:px-6">
-                <div class="bg-white rounded-xl p-6 sm:p-8 md:p-12 lg:flex items-center gap-12 border border-gray-200 shadow-2xl" data-aos="fade-up">
-                    <div class="lg:w-1/2 mb-8 lg:mb-0">
-                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4" data-lang-key="contact_title">Готовы начать?</h2>
-                        <p class="text-base sm:text-lg text-gray-600 mb-6">
-                            <span data-lang-key="contact_subtitle1">Запишитесь на </span><span class="text-gradient-logo font-bold" data-lang-key="contact_subtitle_span">бесплатный пробный урок!</span><span data-lang-key="contact_subtitle2"> Ваш ребенок познакомится с преподавателем, соберет своего первого робота, а вы сможете задать все вопросы и увидеть нашу академию изнутри.</span>
-                        </p>
-                        <p class="text-gray-500" data-lang-key="contact_disclaimer">Количество мест в группах ограничено, успейте забронировать свое!</p>
-                    </div>
-                    <div class="lg:w-1/2">
-                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-                        <form id="trial-form" name="submit-to-google-sheet" method="POST" action="https://script.google.com/macros/s/AKfycbwaX5BPmpi0-QioteIo_Kq8ddt8A6u5B-c-CU5-7lvxNZoNA4iwUx0Lf_TVkei94jmqOA/exec" target="hidden_iframe" class="bg-gray-100 p-6 sm:p-8 rounded-lg space-y-4 border border-gray-200">
-                            <h3 class="text-2xl font-bold text-center mb-4 text-gray-900" data-lang-key="form_title">Заявка на пробный урок</h3>
-                            <div>
-                                <label for="parent-name" class="block text-sm font-medium text-gray-700 mb-1" data-lang-key="form_parent_name_label">Имя родителя</label>
-                                <input type="text" id="parent-name" name="parent-name" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300" placeholder="Например, Анна" data-lang-key-placeholder="form_parent_name_placeholder">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1" data-lang-key="form_phone_label">Ваш телефон</label>
-                                <input type="tel" id="phone" name="phone" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300" placeholder="+7 (777) 041-80-41">
-                            </div>
-                             <div>
-                                <label for="child-name" class="block text-sm font-medium text-gray-700 mb-1" data-lang-key="form_child_name_label">Имя и возраст ребенка</label>
-                                <input type="text" id="child-name" name="child-name" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300" placeholder="Например, Арман, 10 лет" data-lang-key-placeholder="form_child_name_placeholder">
-                            </div>
-                            
-                            <div>
-                                <label for="category-selection" class="block text-sm font-medium text-gray-700 mb-1" data-lang-key="form_category_label">Категория курса</label>
-                                <select id="category-selection" name="category" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
-                                    <option value="" disabled selected data-lang-key="form_category_placeholder">Сначала выберите категорию...</option>
-                                    <option value="kids" data-lang-key="form_course_group_kids">Курсы для детей</option>
-                                    <option value="adults" data-lang-key="form_course_group_adults">Курсы для взрослых</option>
-                                    <option value="consult" data-lang-key="form_course_group_consult">Нужна консультация?</option>
-                                </select>
-                            </div>
-                            
-                            <div id="course-wrapper" class="hidden">
-                                <label for="course-selection" class="block text-sm font-medium text-gray-700 mb-1" data-lang-key="form_course_label">Желаемый курс</label>
-                                <select id="course-selection" name="course" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
-                                </select>
-                            </div>
-                            
-                            <button type="submit" class="w-full bg-gradient-logo hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg text-lg transition duration-300 transform hover:scale-105" data-lang-key="form_submit_btn">Отправить заявку</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-white border-t border-gray-200 py-12">
-        <div class="container mx-auto px-6 sm:px-6 text-center text-gray-500">
-            <p class="text-3xl font-black text-gradient-logo mb-4">RoLab</p>
-            <p class="mb-2 text-gray-600 font-medium"><strong data-lang-key="footer_main_office">Головной офис:</strong> БЦ Bayzak, проспект Абая 52в, 6 этаж, 616 офис</p>
-            <p class="mb-2 text-gray-600 font-medium"><span data-lang-key="footer_phone">Телефон:</span> <a href="tel:+77770418041" class="hover:text-blue-500 transition-colors duration-300">+7 777 041 8041</a></p>
-            <p class="mb-4 text-gray-600 font-medium"><span data-lang-key="footer_email">Email:</span> <a href="mailto:info@rolab-academy.kz" class="hover:text-blue-500 transition-colors duration-300">info@rolab-academy.kz</a></p>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://www.instagram.com/rolab.academy/" target="_blank" class="text-gray-500 hover:text-blue-500 transition-colors duration-300">Instagram</a>
-                <a href="https://t.me/rolabacademy" target="_blank" class="text-gray-500 hover:text-blue-500 transition-colors duration-300">Telegram</a>
-                <a href="https://wa.me/77770418041" target="_blank" class="text-gray-500 hover:text-blue-500 transition-colors duration-300">WhatsApp</a>
-                <a href="https://2gis.kz/almaty/geo/70000001103500803" target="_blank" class="text-gray-500 hover:text-blue-500 transition-colors duration-300">2GIS</a>
-            </div>
-            <p class="text-sm" data-lang-key="footer_copyright">&copy; 2025 RoLab. Все права защищены.</p>
         </div>
-    </footer>
-    
-    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-lg p-8 text-center max-w-sm mx-4 shadow-2xl">
-            <h2 class="text-2xl font-bold text-gradient-logo mb-4" data-lang-key="success_modal_title">Спасибо!</h2>
-            <p class="text-gray-600 mb-6" data-lang-key="success_modal_text">Ваша заявка принята. Мы свяжемся с вами в ближайшее время для подтверждения.</p>
-            <button id="close-modal-button" class="bg-gradient-logo hover:opacity-90 text-white font-bold py-2 px-6 rounded-lg" data-lang-key="success_modal_btn">Отлично!</button>
+        <a href="#about" class="scroll-cue" aria-label="Прокрутить вниз"></a>
+    </section>
+
+    <div class="tech-strip" aria-hidden="true">
+        <div class="marquee">
+            <span>LEGO Robotics</span><span>Arduino</span><span>Python</span><span>Roblox Studio</span><span>3D-моделирование</span><span>FIRST LEGO League</span><span>Инженерное мышление</span><span>Командная работа</span>
+            <span>LEGO Robotics</span><span>Arduino</span><span>Python</span><span>Roblox Studio</span><span>3D-моделирование</span><span>FIRST LEGO League</span><span>Инженерное мышление</span><span>Командная работа</span>
         </div>
     </div>
-    
-    <div id="course-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
-      <div class="bg-white rounded-lg p-6 md:p-8 max-w-2xl w-11/12 mx-auto shadow-2xl relative max-h-[90vh] overflow-y-auto">
-        <button id="close-course-modal-button" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-        <div id="course-modal-content"></div>
-      </div>
+
+    <!-- ================= BENEFITS / ABOUT ================= -->
+    <section class="section benefits" id="about" aria-labelledby="about-title">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Почему RoLab</span>
+                <h2 class="section-title" id="about-title">Не просто кружок — лаборатория, где идеи становятся проектами</h2>
+                <p class="section-sub">Мы превращаем интерес к гаджетам в навыки, которые пригодятся в любой профессии будущего.</p>
+            </div>
+
+            <div class="benefit-grid benefits-grid">
+                <article class="glass-card reveal" style="--d:.05s">
+                    <div class="b-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 8V4.5M12 4.5h.01M9.5 13h.01M14.5 13h.01M9 16.5h6M2.5 12v3M21.5 12v3"/></svg></div>
+                    <h3>Робот с первого урока</h3>
+                    <p>Без скучной теории: ребёнок сразу собирает модель и оживляет её кодом.</p>
+                    <div class="b-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Уходит домой с ощущением «я это сделал»</div>
+                </article>
+                <article class="glass-card reveal" style="--d:.12s">
+                    <div class="b-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6M14 4l-4 16"/></svg></div>
+                    <h3>Настоящий код</h3>
+                    <p>От визуальных блоков — к Python, C++ для Arduino и Lua в Roblox Studio.</p>
+                    <div class="b-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Пишет программы, а не только играет в них</div>
+                </article>
+                <article class="glass-card reveal" style="--d:.19s">
+                    <div class="b-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></div>
+                    <h3>Проект в каждом модуле</h3>
+                    <p>Робот, игра, умное устройство или 3D-модель — результат, который можно показать.</p>
+                    <div class="b-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Собирает собственное портфолио проектов</div>
+                </article>
+                <article class="glass-card reveal" style="--d:.26s">
+                    <div class="b-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></div>
+                    <h3>Путь к соревнованиям</h3>
+                    <p>Готовим команды к международному турниру FIRST LEGO League.</p>
+                    <div class="b-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Учится работать в команде и выступать</div>
+                </article>
+            </div>
+            <p class="swipe-hint benefits-hint" aria-hidden="true">Листайте, чтобы увидеть все преимущества <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></p>
+
+            <div class="about-split">
+                <div class="about-photo reveal">
+                    <img src="pic/fll.jpg" alt="Ученица RoLab настраивает робота на соревнованиях FIRST LEGO League" loading="lazy" width="1920" height="600">
+                    <div class="tag"><b>FIRST LEGO League</b> · соревновательная робототехника</div>
+                </div>
+                <div class="reveal" style="--d:.1s">
+                    <span class="eyebrow">Как проходит обучение</span>
+                    <h2 class="section-title" style="font-size:clamp(28px,3.2vw,40px)">От первой детали — до собственного изобретения</h2>
+                    <div class="steps">
+                        <div class="step"><span class="step-n">01</span><div><h4>Пробный урок</h4><p>Знакомимся, собираем первого робота и подбираем программу по возрасту и интересам.</p></div></div>
+                        <div class="step"><span class="step-n">02</span><div><h4>Занятия в группе</h4><p>По 2 часа в выходные: конструирование, программирование и много практики.</p></div></div>
+                        <div class="step"><span class="step-n">03</span><div><h4>Свой проект</h4><p>Каждый модуль завершается проектом, который ребёнок презентует.</p></div></div>
+                        <div class="step"><span class="step-n">04</span><div><h4>Новый уровень</h4><p>Переход к Arduino, Python или в соревновательную команду FLL.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= COURSES ================= -->
+    <section class="section courses" id="courses" aria-labelledby="courses-title">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Программы</span>
+                <h2 class="section-title" id="courses-title">Выберите возраст — мы покажем подходящие курсы</h2>
+                <p class="section-sub">Группы по возрасту и уровню. Можно начать с нуля — ничего покупать не нужно, всё оборудование есть в классе.</p>
+            </div>
+
+            <div class="filters-wrap reveal">
+                <div class="filters" role="tablist" aria-label="Фильтр по возрасту">
+                    <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all" id="filter-all">Все<span class="count"></span></button>
+                    <button class="filter-btn" role="tab" aria-selected="false" data-filter="6-9" id="filter-6-9">6–9 лет<span class="count"></span></button>
+                    <button class="filter-btn" role="tab" aria-selected="false" data-filter="10-13" id="filter-10-13">10–13 лет<span class="count"></span></button>
+                    <button class="filter-btn" role="tab" aria-selected="false" data-filter="14-17" id="filter-14-17">14–17 лет<span class="count"></span></button>
+                    <button class="filter-btn" role="tab" aria-selected="false" data-filter="adults" id="filter-adults">Взрослым<span class="count"></span></button>
+                </div>
+            </div>
+
+            <div class="course-grid courses-grid" id="course-grid">
+
+                <!-- Robotics -->
+                <article class="course-card reveal" data-ages="6-9 10-13">
+                    <div class="cc-media">
+                        <img src="pic/new/course_robotics.jpg" alt="Ребёнок собирает робота из конструктора" loading="lazy" width="1200" height="750">
+                        <div class="cc-tags"><span class="tag-pill">6–13 лет</span><span class="tag-pill dark">С нуля</span></div>
+                        <span class="cc-dir">Робототехника</span>
+                    </div>
+                    <div class="cc-body">
+                        <h3>LEGO-робототехника</h3>
+                        <p class="cc-desc">Собираем и программируем настоящих роботов, развиваем логику и инженерное мышление.</p>
+                        <div class="cc-build"><small>Что создаст</small>Робота-сортировщика, машинку с датчиками и механическую руку</div>
+                        <div class="cc-meta">
+                            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>СБ/ВС · 11:00–13:00, 13:30–15:30, 16:00–18:00</span></div>
+                        </div>
+                        <div class="cc-foot">
+                            <div class="cc-price"><strong>32 000 ₸</strong><span>в месяц · 1 раз в неделю<br>50 000 ₸ — 2 раза в неделю</span></div>
+                            <button class="btn btn-primary btn-sm js-enroll" data-course="Робототехника" id="enroll-robotics">Записаться</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Arduino -->
+                <article class="course-card reveal" style="--d:.08s" data-ages="10-13 14-17">
+                    <div class="cc-media">
+                        <img src="pic/new/course_arduino.jpg" alt="Плата Arduino с проводами и светодиодами" loading="lazy" width="1200" height="750">
+                        <div class="cc-tags"><span class="tag-pill">10–17 лет</span><span class="tag-pill dark">С нуля</span></div>
+                        <span class="cc-dir">Электроника</span>
+                    </div>
+                    <div class="cc-body">
+                        <h3>Arduino</h3>
+                        <p class="cc-desc">Почувствуй себя инженером: собираем электронные схемы и оживляем их программами.</p>
+                        <div class="cc-build"><small>Что создаст</small>Умную метеостанцию, светофор и сигнализацию с датчиками</div>
+                        <div class="cc-meta">
+                            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>ВС · 13:30–15:30</span></div>
+                        </div>
+                        <div class="cc-foot">
+                            <div class="cc-price"><strong>32 000 ₸</strong><span>в месяц · 1 раз в неделю</span></div>
+                            <button class="btn btn-primary btn-sm js-enroll" data-course="Arduino" id="enroll-arduino">Записаться</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Roblox -->
+                <article class="course-card reveal" style="--d:.16s" data-ages="10-13">
+                    <div class="cc-media">
+                        <img src="pic/new/course_gamedev.jpg" alt="Редактор уровня игры на экране ноутбука" loading="lazy" width="1200" height="750">
+                        <div class="cc-tags"><span class="tag-pill">10–13 лет</span><span class="tag-pill dark">С нуля</span></div>
+                        <span class="cc-dir">Геймдев</span>
+                    </div>
+                    <div class="cc-body">
+                        <h3>Игры в Roblox Studio</h3>
+                        <p class="cc-desc">Из игрока — в разработчика: придумываем миры, механики и прописываем правила на Lua.</p>
+                        <div class="cc-build"><small>Что создаст</small>Собственную игру-обби, которую можно опубликовать и показать друзьям</div>
+                        <div class="cc-meta">
+                            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>ВС · 16:00–18:00</span></div>
+                        </div>
+                        <div class="cc-foot">
+                            <div class="cc-price"><strong>32 000 ₸</strong><span>в месяц · 1 раз в неделю</span></div>
+                            <button class="btn btn-primary btn-sm js-enroll" data-course="Разработка игр в Roblox" id="enroll-roblox">Записаться</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FLL — featured -->
+                <article class="course-card featured reveal" data-ages="6-9 10-13 14-17">
+                    <div class="cc-media">
+                        <img src="pic/fll.jpg" alt="Робот на соревнованиях FIRST LEGO League" loading="lazy" width="1920" height="600">
+                        <div class="cc-tags"><span class="tag-pill">6–16 лет</span><span class="tag-pill dark">Продвинутый</span></div>
+                    </div>
+                    <div class="cc-body">
+                        <span class="featured-ribbon">★ Для амбициозных</span>
+                        <h3>Соревновательная робототехника FIRST LEGO League</h3>
+                        <p class="cc-desc">Команда, исследовательский проект и робот для международного турнира. Развиваем инженерное мышление, лидерство и умение выступать.</p>
+                        <div class="cc-build"><small>Что создаст</small>Робота для выполнения миссий на поле и командный инновационный проект</div>
+                        <div class="tracks">
+                            <div class="track"><b>Explore</b><span>6–10 лет · 2 раза в неделю</span><strong>50 000 ₸ <small>/ мес</small></strong></div>
+                            <div class="track"><b>Challenge</b><span>9–16 лет · 3 раза в неделю</span><strong>70 000 ₸ <small>/ мес</small></strong></div>
+                        </div>
+                        <div class="cc-meta">
+                            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Расписание согласуется с командой</span></div>
+                        </div>
+                        <div class="cc-foot">
+                            <a href="#contact" class="btn btn-primary js-enroll" data-course="Соревновательная робототехника (FLL)" id="enroll-fll">
+                                Попасть в команду
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3D -->
+                <article class="course-card reveal" style="--d:.08s" data-ages="10-13 14-17">
+                    <div class="cc-media">
+                        <img src="pic/new/course_3d.jpg" alt="3D-модель ровера и экран с программой моделирования" loading="lazy" width="1200" height="750">
+                        <div class="cc-tags"><span class="tag-pill">10–17 лет</span><span class="tag-pill dark">С нуля</span></div>
+                        <span class="cc-dir">3D-дизайн</span>
+                    </div>
+                    <div class="cc-body">
+                        <h3>3D-моделирование</h3>
+                        <p class="cc-desc">Создаём объекты в 3D — от простых фигур до персонажей, машин и домов.</p>
+                        <div class="cc-build"><small>Что создаст</small>Собственного персонажа, транспорт и архитектурную модель</div>
+                        <div class="cc-meta">
+                            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>СБ · 13:30–15:30, 16:00–18:00</span></div>
+                        </div>
+                        <div class="cc-foot">
+                            <div class="cc-price"><strong>32 000 ₸</strong><span>в месяц · 1 раз в неделю</span></div>
+                            <button class="btn btn-primary btn-sm js-enroll" data-course="3D-моделирование" id="enroll-3d">Записаться</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Python -->
+                <article class="course-card reveal" data-ages="10-13 14-17">
+                    <div class="cc-media">
+                        <img src="pic/new/course_python.jpg" alt="Код на Python и игра «Змейка» на экране" loading="lazy" width="1200" height="750">
+                        <div class="cc-tags"><span class="tag-pill">10–17 лет</span><span class="tag-pill dark">Базовый</span></div>
+                        <span class="cc-dir">Программирование</span>
+                    </div>
+                    <div class="cc-body">
+                        <h3>Python для детей</h3>
+                        <p class="cc-desc">Один из самых востребованных языков: учимся думать как программист и пишем первые игры.</p>
+                        <div class="cc-build"><small>Что создаст</small>Игру «Змейка», викторину и чат-бота на Python</div>
+                        <div class="cc-meta">
+                            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>СБ · 13:30–15:30, 16:00–18:00</span></div>
+                        </div>
+                        <div class="cc-foot">
+                            <div class="cc-price"><strong>32 000 ₸</strong><span>в месяц · 1 раз в неделю</span></div>
+                            <button class="btn btn-primary btn-sm js-enroll" data-course="Python для детей" id="enroll-python">Записаться</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Adults -->
+                <article class="course-card reveal" style="--d:.08s" data-ages="adults">
+                    <div class="cc-media">
+                        <img src="pic/new/course_adults.jpg" alt="Взрослый осваивает ноутбук и смартфон" loading="lazy" width="1200" height="750">
+                        <div class="cc-tags"><span class="tag-pill">Взрослым</span><span class="tag-pill dark">С нуля</span></div>
+                        <span class="cc-dir">Цифровые навыки</span>
+                    </div>
+                    <div class="cc-body">
+                        <h3>Компьютерная грамотность</h3>
+                        <p class="cc-desc">Уверенно в мире технологий: от базовых программ до онлайн-банкинга и безопасности в интернете.</p>
+                        <div class="cc-build"><small>Результат</small>Самостоятельная работа с ПК, документами, госуслугами и банками онлайн</div>
+                        <div class="cc-meta">
+                            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Вечер, по договорённости</span></div>
+                        </div>
+                        <div class="cc-foot">
+                            <div class="cc-price"><strong>32 000 ₸</strong><span>в месяц · 1 раз в неделю<br>50 000 ₸ — 2 раза в неделю</span></div>
+                            <button class="btn btn-primary btn-sm js-enroll" data-course="Компьютерная грамотность" id="enroll-adults">Записаться</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Teachers -->
+                <article class="course-card reveal" style="--d:.16s" data-ages="adults">
+                    <div class="cc-media">
+                        <img src="pic/new/teacherprep.jpg" alt="Преподаватель объясняет материал" loading="lazy" width="1200" height="750">
+                        <div class="cc-tags"><span class="tag-pill">Взрослым</span><span class="tag-pill dark">Профи</span></div>
+                        <span class="cc-dir">Для педагогов</span>
+                    </div>
+                    <div class="cc-body">
+                        <h3>Подготовка преподавателей</h3>
+                        <p class="cc-desc">Для тех, кто хочет стать наставником: технические основы робототехники и методика работы с детьми.</p>
+                        <div class="cc-build"><small>Результат</small>Готовность вести собственные занятия по робототехнике</div>
+                        <div class="cc-meta">
+                            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Будни, вечернее время</span></div>
+                        </div>
+                        <div class="cc-foot">
+                            <div class="cc-price"><strong>300 000 ₸</strong><span>за весь курс</span></div>
+                            <button class="btn btn-primary btn-sm js-enroll" data-course="Подготовка преподавателей" id="enroll-teachers">Записаться</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <p class="courses-note reveal">Не знаете, что выбрать? <a href="#contact" class="js-enroll" data-course="Помогите с выбором">Поможем подобрать программу на пробном уроке</a></p>
+        </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <!-- TODO: заменить изображения и подписи на реальные работы учеников -->
+    <section class="section projects dark" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+            <div class="projects-head">
+                <div class="section-head left reveal">
+                    <span class="eyebrow">Проекты учеников</span>
+                    <h2 class="section-title" id="projects-title">Это сделали наши ученики</h2>
+                    <p class="section-sub">Роботы, умные устройства, 3D-модели и игры — каждый модуль заканчивается реальным результатом.</p>
+                </div>
+                <div class="carousel-ctrl reveal">
+                    <button class="ctrl-btn" id="proj-prev" aria-label="Предыдущий проект"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg></button>
+                    <button class="ctrl-btn" id="proj-next" aria-label="Следующий проект"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+                </div>
+            </div>
+
+            <div class="project-track reveal" id="project-track" tabindex="0" aria-label="Галерея проектов учеников"></div>
+            <div class="progress-rail"><i id="proj-progress"></i></div>
+        </div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Отзывы</span>
+                <h2 class="section-title" id="reviews-title">Родители говорят о нас лучше нас</h2>
+                <p class="section-sub">Нам доверяют самое ценное — и дети возвращаются к нам год за годом.</p>
+            </div>
+
+            <div class="reviews-list reviews-grid">
+                <!-- TODO: уточнить возраст ребёнка и заменить аватары на реальные фото -->
+                <article class="review-card review-featured reveal">
+                    <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M4.6 19c-1-1.1-1.6-2.3-1.6-4.3 0-3.5 2.5-6.6 6-8.2l.9 1.4C6.6 9.6 6 11.7 5.7 13.1c.6-.3 1.3-.4 2-.3 1.8.2 3.2 1.6 3.2 3.4a3.5 3.5 0 0 1-3.5 3.5c-1.1 0-2.1-.3-2.8-.7zm10 0c-1-1.1-1.6-2.3-1.6-4.3 0-3.5 2.5-6.6 6-8.2l.9 1.4c-3.3 1.8-3.9 3.9-4.2 5.3.6-.3 1.3-.4 2-.3 1.8.2 3.2 1.6 3.2 3.4a3.5 3.5 0 0 1-3.5 3.5c-1.1 0-2.1-.3-2.8-.7z"/></svg>
+                    <blockquote>«Сын ходит не первый год: сначала попросился на робототехнику, потом решил заниматься программированием. Каждый раз бежит на занятие — очень нравится!»</blockquote>
+                    <div class="stars" aria-label="5 из 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                    <div class="review-meta"><span class="chip">Робототехника → Python</span><span class="chip">Сын, 12 лет</span><span class="chip">Учится больше года</span></div>
+                    <div class="reviewer">
+                        <span class="avatar">ЕЛ</span>
+                        <div class="reviewer-info"><b>Елена Лось</b><span>мама ученика</span></div>
+                    </div>
+                </article>
+
+                <article class="review-card reveal" style="--d:.1s">
+                    <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M4.6 19c-1-1.1-1.6-2.3-1.6-4.3 0-3.5 2.5-6.6 6-8.2l.9 1.4C6.6 9.6 6 11.7 5.7 13.1c.6-.3 1.3-.4 2-.3 1.8.2 3.2 1.6 3.2 3.4a3.5 3.5 0 0 1-3.5 3.5c-1.1 0-2.1-.3-2.8-.7zm10 0c-1-1.1-1.6-2.3-1.6-4.3 0-3.5 2.5-6.6 6-8.2l.9 1.4c-3.3 1.8-3.9 3.9-4.2 5.3.6-.3 1.3-.4 2-.3 1.8.2 3.2 1.6 3.2 3.4a3.5 3.5 0 0 1-3.5 3.5c-1.1 0-2.1-.3-2.8-.7z"/></svg>
+                    <blockquote>«Недавно начали ходить сюда. Ребёнку очень нравится, ребята в группе общительные, а преподаватели внимательные. Спасибо!»</blockquote>
+                    <div class="stars" aria-label="5 из 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                    <div class="reviewer">
+                        <span class="avatar a2">AN</span>
+                        <div class="reviewer-info"><b>Arshidin Nassyrov</b><span>Робототехника · ребёнок 8 лет</span></div>
+                    </div>
+                </article>
+
+                <article class="review-card reveal" style="--d:.2s">
+                    <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M4.6 19c-1-1.1-1.6-2.3-1.6-4.3 0-3.5 2.5-6.6 6-8.2l.9 1.4C6.6 9.6 6 11.7 5.7 13.1c.6-.3 1.3-.4 2-.3 1.8.2 3.2 1.6 3.2 3.4a3.5 3.5 0 0 1-3.5 3.5c-1.1 0-2.1-.3-2.8-.7zm10 0c-1-1.1-1.6-2.3-1.6-4.3 0-3.5 2.5-6.6 6-8.2l.9 1.4c-3.3 1.8-3.9 3.9-4.2 5.3.6-.3 1.3-.4 2-.3 1.8.2 3.2 1.6 3.2 3.4a3.5 3.5 0 0 1-3.5 3.5c-1.1 0-2.1-.3-2.8-.7z"/></svg>
+                    <blockquote>«Ребёнок занимается уже давно: собрал своего первого робота и с горящими глазами ждёт каждый урок. Нам всё очень нравится!»</blockquote>
+                    <div class="stars" aria-label="5 из 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                    <div class="reviewer">
+                        <span class="avatar a3">AA</span>
+                        <div class="reviewer-info"><b>Aida Aitkalieva</b><span>Робототехника · ребёнок 10 лет</span></div>
+                    </div>
+                </article>
+            </div>
+            <p class="swipe-hint" aria-hidden="true">Листайте, чтобы прочитать все отзывы <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></p>
+
+            <div class="rating-bar reveal" style="--d:.3s">
+                <p><b>Больше отзывов родителей</b> — в нашей карточке на 2GIS</p>
+                <a href="https://2gis.kz/almaty/geo/70000001103500803" target="_blank" rel="noopener" class="btn btn-outline btn-sm" id="reviews-2gis">Читать на 2GIS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= BRANCHES ================= -->
+    <section class="section branches" id="branches" aria-labelledby="branches-title">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Адреса</span>
+                <h2 class="section-title" id="branches-title">Приходите в гости в нашу лабораторию</h2>
+                <p class="section-sub">Выберите удобный филиал — покажем класс, оборудование и познакомим с преподавателем.</p>
+            </div>
+
+            <div class="branch-wrap reveal">
+                <div class="branch-panel">
+                    <div class="branch-tabs" id="branch-tabs" role="tablist" aria-label="Филиалы"></div>
+                    <div id="branch-info" aria-live="polite"></div>
+                </div>
+                <div class="branch-map">
+                    <div class="map-badge"><i></i><span id="map-badge-text">Открыто по выходным</span></div>
+                    <iframe id="branch-map" title="Карта филиала RoLab" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="about:blank"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA / FORM ================= -->
+    <section class="section cta dark" id="contact" aria-labelledby="cta-title">
+        <div class="hero-grid-bg"></div>
+        <div class="container">
+            <div class="reveal">
+                <span class="eyebrow">Бесплатный пробный урок</span>
+                <h2 id="cta-title">На первом уроке ребёнок соберёт своего <span class="grad-text">первого робота</span></h2>
+                <p class="cta-lead">Познакомится с преподавателем, попробует программирование, а вы сможете задать все вопросы и увидеть академию изнутри.</p>
+
+                <div class="lesson-plan">
+                    <div class="lp-item"><span class="t">15 мин</span><p>Знакомство и короткая экскурсия по лаборатории</p></div>
+                    <div class="lp-item"><span class="t">60 мин</span><p>Сборка и программирование первого робота</p></div>
+                    <div class="lp-item"><span class="t">15 мин</span><p>Обратная связь и подбор программы для ребёнка</p></div>
+                </div>
+
+                <div class="trust">
+                    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Бесплатно и без обязательств</div>
+                    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z"/></svg>Всё оборудование — наше</div>
+                    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Места в группах ограничены</div>
+                </div>
+            </div>
+
+            <div class="form-card reveal" style="--d:.15s" id="form-card">
+                <iframe name="hidden_iframe" id="hidden_iframe" title="hidden" style="display:none;"></iframe>
+                <form id="trial-form" novalidate method="POST" action="https://script.google.com/macros/s/AKfycbwaX5BPmpi0-QioteIo_Kq8ddt8A6u5B-c-CU5-7lvxNZoNA4iwUx0Lf_TVkei94jmqOA/exec" target="hidden_iframe">
+                    <div class="form-head">
+                        <h3>Заявка на пробный урок</h3>
+                        <span class="free">0 ₸</span>
+                    </div>
+
+                    <div class="form-progress" aria-hidden="true">
+                        <div class="fp-bar"><i id="fp-bar"></i></div>
+                        <div class="fp-steps">
+                            <span data-step="parent-name">Родитель</span>
+                            <span data-step="phone">Телефон</span>
+                            <span data-step="child-name">Ребёнок</span>
+                            <span data-step="course">Курс</span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="parent-name">Ваше имя</label>
+                        <input type="text" id="parent-name" name="parent-name" required autocomplete="name" placeholder="Например, Анна">
+                        <span class="err">Пожалуйста, укажите имя</span>
+                    </div>
+                    <div class="field">
+                        <label for="phone">Телефон / WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__">
+                        <span class="err">Введите номер полностью</span>
+                    </div>
+                    <div class="field">
+                        <label for="child-name">Имя и возраст ребёнка</label>
+                        <input type="text" id="child-name" name="child-name" required placeholder="Например, Арман, 10 лет">
+                        <span class="err">Укажите имя и возраст ребёнка</span>
+                    </div>
+                    <div class="field">
+                        <label for="course-selection">Интересующий курс</label>
+                        <select id="course-selection" name="course" required>
+                            <option value="" disabled selected>Выберите курс</option>
+                            <optgroup label="Для детей" data-category="kids">
+                                <option>Робототехника</option>
+                                <option>Arduino</option>
+                                <option>Разработка игр в Roblox</option>
+                                <option>3D-моделирование</option>
+                                <option>Python для детей</option>
+                                <option>Соревновательная робототехника (FLL)</option>
+                            </optgroup>
+                            <optgroup label="Для взрослых" data-category="adults">
+                                <option>Компьютерная грамотность</option>
+                                <option>Подготовка преподавателей</option>
+                            </optgroup>
+                            <optgroup label="Не определились" data-category="consult">
+                                <option>Помогите с выбором</option>
+                            </optgroup>
+                        </select>
+                        <span class="err">Выберите курс</span>
+                    </div>
+                    <input type="hidden" name="category" id="category-hidden" value="">
+
+                    <label class="consent" id="consent-label">
+                        <input type="checkbox" id="consent" name="consent" value="yes" required>
+                        <span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                        <span>Я согласен(на) на обработку персональных данных для связи по заявке</span>
+                    </label>
+
+                    <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                        <span class="btn-label">Записаться бесплатно</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="form-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Не передаём данные третьим лицам</div>
+                </form>
+
+                <div class="form-success" role="status" aria-live="polite">
+                    <div class="success-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+                    <h3>Заявка отправлена! 🎉</h3>
+                    <p><span id="success-name">Спасибо</span>, мы свяжемся с вами в ближайшее время, чтобы подобрать удобное время урока.</p>
+                    <div class="next">
+                        <div><b>1</b>Администратор позвонит или напишет в WhatsApp</div>
+                        <div><b>2</b>Подберём группу и время пробного урока</div>
+                        <div><b>3</b>Ребёнок соберёт своего первого робота</div>
+                    </div>
+                    <a href="https://wa.me/77770418041" target="_blank" rel="noopener" class="btn btn-wa btn-block" id="success-wa">Написать нам в WhatsApp</a>
+                    <button type="button" class="btn btn-outline btn-block" id="form-reset" style="margin-top:10px">Отправить ещё одну заявку</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <span class="logo-chip"><img src="pic/logo-transparent.png" alt="RoLab Academy" loading="lazy" width="120" height="48"></span>
+                <p class="about">Академия робототехники, программирования и 3D-моделирования для детей и взрослых в Алматы.</p>
+                <div class="socials">
+                    <a href="https://www.instagram.com/rolab.academy/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+                    <a href="https://t.me/rolabacademy" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg></a>
+                    <a href="https://wa.me/77770418041" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 10c0 3 2 5 5 5l1.2-1.2-2-1-1 .7a3.5 3.5 0 0 1-1.7-1.7l.7-1-1-2z"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h4>Программы</h4>
+                <ul>
+                    <li><a href="#courses">Робототехника</a></li>
+                    <li><a href="#courses">Arduino</a></li>
+                    <li><a href="#courses">Python</a></li>
+                    <li><a href="#courses">Roblox Studio</a></li>
+                    <li><a href="#courses">3D-моделирование</a></li>
+                    <li><a href="#courses">FIRST LEGO League</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#projects">Проекты учеников</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
+                    <li><a href="#branches">Адреса</a></li>
+                    <li><a href="#contact">Бесплатный урок</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Контакты</h4>
+                <ul>
+                    <li><a href="tel:+77770418041">+7 777 041 80 41</a></li>
+                    <li><a href="mailto:info@rolab-academy.kz">info@rolab-academy.kz</a></li>
+                    <li>БЦ Bayzak, пр. Абая 52в,<br>6 этаж, офис 616</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© <span id="year">2026</span> RoLab Academy. Все права защищены.</span>
+            <span>Алматы, Казахстан</span>
+        </div>
     </div>
+</footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+<div class="mobile-cta sticky-cta" id="sticky-cta">
+    <a href="#trial-form" class="mobile-cta__button" id="sticky-cta-btn">
+        Записаться бесплатно
+    </a>
+</div>
 
-            const translations = {
-                ru: {
-                    nav_about: "О нас", nav_courses: "Курсы", nav_reviews: "Отзывы", nav_branches: "Адреса", nav_signup_btn: "Записаться",
-                    hero_title: "Превратите увлечение гаджетами<br class='hidden sm:block'> в ", hero_title_span: "профессию будущего",
-                    hero_subtitle: "В академии RoLab ваш ребенок научится создавать и программировать роботов, разовьет логику и подготовится к востребованной IT-специальности.",
-                    hero_button: "Записаться на пробный урок",
-                    about_title: "Наши курсы идеально подойдут, если ваш ребенок:", about_subtitle: "Узнайте себя и подарите ребенку полезное хобби.",
-                    about_card1_title: "Проводит много времени в телефоне", about_card1_text: "Мы направим его интерес к технологиям в созидательное русло.",
-                    about_card2_title: "Любит LEGO и конструкторы", about_card2_text: "У нас он сможет \"оживлять\" свои модели с помощью кода.",
-                    about_card3_title: "Мечтает создавать игры и роботов", about_card3_text: "Мы дадим ему все необходимые знания и инструменты для этого.",
-                    about_card4_title: "Хочет получить профессию будущего", about_card4_text: "Навыки робототехники и программирования — ключ к успеху в XXI веке.",
-                    courses_title: "Наши программы обучения", courses_subtitle: "Подберем группу под любой возраст и уровень подготовки.", course_btn_details: "Подробнее",
-                    course_robotics_hero: "Робототехника", course_robotics_title: "Робототехника для всех", course_robotics_desc: "Дети учатся собирать и программировать настоящих роботов, развивая логику и инженерное мышление.", course_robotics_schedule: "<strong>Расписание (СБ/ВС):</strong> 11:00-13:00, 13:30-15:30, 16:00-18:00", course_robotics_price: "<strong>Стоимость:</strong> 32000₸ (1 раз/нед) | 50000₸ (2 раза/нед)",
-                    course_arduino_hero: "Arduino", course_arduino_title: "Программирование Arduino", course_arduino_desc: "Курс для тех, кто хочет почувствовать себя инженером, собирая электронные схемы и оживляя их программами.", course_arduino_schedule: "<strong>Расписание (ВС):</strong> 13:30-15:30", course_arduino_price: "<strong>Стоимость:</strong> 32000₸ (1 раз/нед)",
-                    course_roblox_hero: "Roblox", course_roblox_title: "Разработка игр в Roblox", course_roblox_desc: "Дети любят играть в Roblox, а у нас они учатся создавать свои собственные игры, придумывая миры и прописывая правила.", course_roblox_schedule: "<strong>Расписание (ВС):</strong> 16:00-18:00", course_roblox_price: "<strong>Стоимость:</strong> 32000₸ (1 раз/нед)",
-                    course_3d_hero: "3D-моделирование", course_3d_title: "3D-моделирование", course_3d_desc: "На курсе дети учатся создавать объекты в 3D — от простых фигур до целых персонажей, машин и домов.", course_3d_schedule: "<strong>Расписание (СБ):</strong> 13:30-15:30, 16:00-18:00", course_3d_price: "<strong>Стоимость:</strong> 32000₸ (1 раз/нед)",
-                    course_python_hero: "Python", course_python_title: "Python для детей", course_python_desc: "Один из самых популярных языков программирования, на котором дети учатся думать как программисты и создавать первые игры.", course_python_schedule: "<strong>Расписание (СБ):</strong> 13:30-15:30, 16:00-18:00", course_python_price: "<strong>Стоимость:</strong> 32000₸ (1 раз/нед)",
-                    course_fll_banner: "ДЛЯ АМБИЦИОЗНЫХ", course_fll_title: "Соревновательная робототехника", course_fll_desc: "Для тех, кто хочет участвовать в международных соревнованиях FIRST LEGO League, развивая командную работу и инженерное мышление.", course_fll_price_explore: "<strong>Explore (6-10 лет):</strong> 50000₸ (2 раза/нед)", course_fll_price_challenge: "<strong>Challenge (9-16 лет):</strong> 70000₸ (3 раза/нед)",
-                    course_adults_hero: "Для взрослых", course_adults_title: "Компьютерная грамотность", course_adults_desc: "Помогает уверенно чувствовать себя в мире технологий: от базовых программ до онлайн-банкинга и безопасности в интернете.", course_adults_schedule: "<strong>Расписание:</strong> Вечер, по договоренности", course_adults_price: "<strong>Стоимость:</strong> 32000₸ (1 раз/нед) | 50000₸ (2 раза/нед)",
-                    course_teachers_hero: "Для преподавателей", course_teachers_title: "Подготовка преподавателей", course_teachers_desc: "Курс для тех, кто хочет стать наставником в мире технологий. Обучаем техническим основам и методике работы с детьми.", course_teachers_schedule: "<strong>Расписание:</strong> Будни, вечер", course_teachers_price: "<strong>Стоимость:</strong> 300 000₸ за курс",
-                    reviews_title: "Что говорят наши ученики и их родители", reviews_subtitle: "Нам доверяют самое ценное.",
-                    review1_text: "\"Сын ходит не первый год: сначала попросился на робототехнику, потом решил программированием заниматься. Каждый раз бежит на занятие, потому что очень нравится)))\"",
-                    review2_text: "\"Недавно начали ходить сюда. Ребенку нравится, ребята общительные. Спасибо 👍\"",
-                    review3_text: "\"Ребёнок занимается уже давно, нам все нравится 🙏\"",
-                    branches_title: "Наши адреса", branches_subtitle: "Выберите удобное для вас местоположение.", address_word: "Адрес:",
-                    branch_main_title: "Головной офис \"Байзак\"", branch_toggle_schedule: "Показать/скрыть расписание",
-                    schedule_robotics_title: "Робототехника (все возраста)", schedule_robotics_time: "СБ/ВС: 11:00-13:00, 13:30-15:30, 16:00-18:00", schedule_robotics_price1: "32000₸ <span class='font-normal'>/ 1 р. в нед.</span>", schedule_robotics_price2: "50000₸ <span class='font-normal'>/ 2 р. в нед.</span>",
-                    schedule_arduino_title: "Ардуино", schedule_arduino_time: "Воскресенье: 13:30-15:30", schedule_arduino_price: "32000₸ <span class='font-normal'>/ месяц</span>",
-                    schedule_roblox_title: "Разработка игр в Roblox", schedule_roblox_time: "Воскресенье: 16:00-18:00", schedule_roblox_price: "32000₸ <span class='font-normal'>/ месяц</span>",
-                    schedule_python_title: "Программирование на Python", schedule_python_time: "Суббота: 13:30-15:30, 16:00-18:00", schedule_python_price: "32000₸ <span class='font-normal'>/ месяц</span>",
-                    schedule_3d_title: "3D Моделирование", schedule_3d_time: "Суббота: 13:30-15:30, 16:00-18:00", schedule_3d_price: "32000₸ <span class='font-normal'>/ месяц</span>",
-                    schedule_fll_title: "Соревновательная робототехника", schedule_fll_time: "Время оговаривается с командой", schedule_fll_price_explore: "Explore: 50000₸", schedule_fll_price_challenge: "Challenge: 70000₸",
-                    schedule_adults_title: "Комп. грамотность (для взрослых)", schedule_adults_time: "Вечер, по договоренности", schedule_adults_price1: "32000₸ <span class='font-normal'>/ 1 р. в нед.</span>", schedule_adults_price2: "50000₸ <span class='font-normal'>/ 2 р. в нед.</span>",
-                    schedule_teachers_title: "Курс для преподавателей", schedule_teachers_time: "Будни, вечернее время", schedule_teachers_price: "300000₸ <span class='font-normal'>/ за курс</span>",
-                    branch_duman_title: "Филиал \"Думан\"", branch_duman_course: "<strong>Курс:</strong> Робототехника для детей", branch_duman_schedule: "<strong>Расписание:</strong> Суббота, 12:00-14:00", branch_duman_price: "Стоимость: 32000₸ в месяц",
-                    branch_zhaskanat_title: "Филиал \"Жасканат\"", branch_zhaskanat_course: "<strong>Курс:</strong> Робототехника для детей", branch_zhaskanat_schedule: "<strong>Расписание:</strong> Воскресенье, 14:00-16:00", branch_zhaskanat_price: "Стоимость: 32000₸ в месяц",
-                    contact_title: "Готовы начать?", contact_subtitle1: "Запишитесь на ", contact_subtitle_span: "бесплатный пробный урок!", contact_subtitle2: " Ваш ребенок познакомится с преподавателем, соберет своего первого робота, а вы сможете задать все вопросы и увидеть нашу академию изнутри.",
-                    contact_disclaimer: "Количество мест в группах ограничено, успейте забронировать свое!",
-                    form_title: "Заявка на пробный урок",
-                    form_parent_name_label: "Имя родителя", form_parent_name_placeholder: "Например, Анна",
-                    form_phone_label: "Ваш телефон",
-                    form_child_name_label: "Имя и возраст ребенка", form_child_name_placeholder: "Например, Арман, 10 лет",
-                    footer_main_office: "Головной офис:", footer_phone: "Телефон:", footer_copyright: "&copy; 2025 RoLab. Все права защищены.",
-                    success_modal_title: "Спасибо!", success_modal_text: "Ваша заявка принята. Мы свяжемся с вами в ближайшее время для подтверждения.", success_modal_btn: "Отлично!",
-                    form_category_label: "Категория курса", form_category_placeholder: "Сначала выберите категорию...", form_course_label: "Желаемый курс", form_course_placeholder: "Выберите курс...", form_course_group_kids: "Курсы для детей", form_course_robotics: "Робототехника", form_course_arduino: "Arduino", form_course_roblox: "Разработка игр в Roblox", form_course_3d: "3D-моделирование", form_course_python: "Python для детей", form_course_fll: "Соревновательная робототехника (FLL)", form_course_group_adults: "Курсы для взрослых", form_course_adults: "Компьютерная грамотность", form_course_teachers: "Подготовка преподавателей", form_course_group_consult: "Нужна консультация?", form_course_help: "Помогите с выбором",
-                },
-                en: {
-                    nav_about: "About Us", nav_courses: "Courses", nav_reviews: "Reviews", nav_branches: "Branches", nav_signup_btn: "Sign Up",
-                    hero_title: "Turn a passion for gadgets<br class='hidden sm:block'> into a ", hero_title_span: "profession of the future",
-                    hero_subtitle: "At RoLab Academy, your child will learn to create and program robots, develop logic, and prepare for a high-demand IT specialty.",
-                    hero_button: "Sign up for a trial lesson",
-                    about_title: "Our courses are perfect if your child:", about_subtitle: "Recognize your child and give them a useful hobby.",
-                    about_card1_title: "Spends a lot of time on their phone", about_card1_text: "We will channel their interest in technology into a creative outlet.",
-                    about_card2_title: "Loves LEGO and building kits", about_card2_text: "Here, they can bring their models to life with code.",
-                    about_card3_title: "Dreams of creating games and robots", about_card3_text: "We will provide all the necessary knowledge and tools for this.",
-                    about_card4_title: "Wants a profession of the future", about_card4_text: "Skills in robotics and programming are the key to success in the 21st century.",
-                    courses_title: "Our Training Programs", courses_subtitle: "We'll find a group for any age and skill level.", course_btn_details: "Details",
-                    course_robotics_hero: "Robotics", course_robotics_title: "Robotics for Everyone", course_robotics_desc: "Children learn to build and program real robots, developing logic and engineering thinking.", course_robotics_schedule: "<strong>Schedule (Sat/Sun):</strong> 11:00-13:00, 13:30-15:30, 16:00-18:00", course_robotics_price: "<strong>Price:</strong> 32000₸ (1x/week) | 50000₸ (2x/week)",
-                    course_arduino_hero: "Arduino", course_arduino_title: "Arduino Programming", course_arduino_desc: "A course for those who want to feel like an engineer, building electronic circuits and bringing them to life with programs.", course_arduino_schedule: "<strong>Schedule (Sun):</strong> 13:30-15:30", course_arduino_price: "<strong>Price:</strong> 32000₸ (1x/week)",
-                    course_roblox_hero: "Roblox", course_roblox_title: "Game Development in Roblox", course_roblox_desc: "Kids love playing Roblox, and here they learn to create their own games, designing worlds and scripting rules.", course_roblox_schedule: "<strong>Schedule (Sun):</strong> 16:00-18:00", course_roblox_price: "<strong>Price:</strong> 32000₸ (1x/week)",
-                    course_3d_hero: "3D Modeling", course_3d_title: "3D Modeling", course_3d_desc: "In this course, children learn to create 3D objects—from simple shapes to entire characters, cars, and houses.", course_3d_schedule: "<strong>Schedule (Sat):</strong> 13:30-15:30, 16:00-18:00", course_3d_price: "<strong>Price:</strong> 32000₸ (1x/week)",
-                    course_python_hero: "Python", course_python_title: "Python for Kids", course_python_desc: "One of the most popular programming languages, where kids learn to think like programmers and create their first games.", course_python_schedule: "<strong>Schedule (Sat):</strong> 13:30-15:30, 16:00-18:00", course_python_price: "<strong>Price:</strong> 32000₸ (1x/week)",
-                    course_fll_banner: "FOR THE AMBITIOUS", course_fll_title: "Competitive Robotics", course_fll_desc: "For those who want to participate in international FIRST LEGO League competitions, developing teamwork and engineering skills.", course_fll_price_explore: "<strong>Explore (6-10 y.o.):</strong> 50000₸ (2x/week)", course_fll_price_challenge: "<strong>Challenge (9-16 y.o.):</strong> 70000₸ (3x/week)",
-                    course_adults_hero: "For Adults", course_adults_title: "Computer Literacy", course_adults_desc: "Helps you feel confident in the world of technology: from basic software to online banking and internet security.", course_adults_schedule: "<strong>Schedule:</strong> Evenings, by arrangement", course_adults_price: "<strong>Price:</strong> 32000₸ (1x/week) | 50000₸ (2x/week)",
-                    course_teachers_hero: "For Teachers", course_teachers_title: "Teacher Training", course_teachers_desc: "A course for those who want to become mentors in the world of technology. We teach technical fundamentals and methods for working with children.", course_teachers_schedule: "<strong>Schedule:</strong> Weekdays, evening", course_teachers_price: "<strong>Price:</strong> 300,000₸ per course",
-                    reviews_title: "What our students and their parents say", reviews_subtitle: "They trust us with what is most precious.",
-                    review1_text: "\"My son has been attending for several years: first he asked for robotics, then he decided to get into programming. He runs to every class because he loves it so much)))\"",
-                    review2_text: "\"We recently started coming here. My child likes it, the kids are sociable. Thank you 👍\"",
-                    review3_text: "\"My child has been studying for a long time, we like everything 🙏\"",
-                    branches_title: "Our Locations", branches_subtitle: "Choose a convenient location for you.", address_word: "Address:",
-                    branch_main_title: "Main Office \"Bayzak\"", branch_toggle_schedule: "Show/hide schedule",
-                    schedule_robotics_title: "Robotics (all ages)", schedule_robotics_time: "Sat/Sun: 11:00-13:00, 13:30-15:30, 16:00-18:00", schedule_robotics_price1: "32000₸ <span class='font-normal'>/ 1x per week</span>", schedule_robotics_price2: "50000₸ <span class='font-normal'>/ 2x per week</span>",
-                    schedule_arduino_title: "Arduino", schedule_arduino_time: "Sunday: 13:30-15:30", schedule_arduino_price: "32000₸ <span class='font-normal'>/ month</span>",
-                    schedule_roblox_title: "Game Development in Roblox", schedule_roblox_time: "Sunday: 16:00-18:00", schedule_roblox_price: "32000₸ <span class='font-normal'>/ month</span>",
-                    schedule_python_title: "Python Programming", schedule_python_time: "Saturday: 13:30-15:30, 16:00-18:00", schedule_python_price: "32000₸ <span class='font-normal'>/ month</span>",
-                    schedule_3d_title: "3D Modeling", schedule_3d_time: "Saturday: 13:30-15:30, 16:00-18:00", schedule_3d_price: "32000₸ <span class='font-normal'>/ month</span>",
-                    schedule_fll_title: "Competitive Robotics", schedule_fll_time: "Time is arranged with the team", schedule_fll_price_explore: "Explore: 50000₸", schedule_fll_price_challenge: "Challenge: 70000₸",
-                    schedule_adults_title: "Computer Literacy (for adults)", schedule_adults_time: "Evenings, by arrangement", schedule_adults_price1: "32000₸ <span class='font-normal'>/ 1x per week</span>", schedule_adults_price2: "50000₸ <span class='font-normal'>/ 2x per week</span>",
-                    schedule_teachers_title: "Teacher Training Course", schedule_teachers_time: "Weekdays, evening", schedule_teachers_price: "300000₸ <span class='font-normal'>/ per course</span>",
-                    branch_duman_title: "Branch \"Duman\"", branch_duman_course: "<strong>Course:</strong> Robotics for kids", branch_duman_schedule: "<strong>Schedule:</strong> Saturday, 12:00-14:00", branch_duman_price: "Price: 32000₸ per month",
-                    branch_zhaskanat_title: "Branch \"Zhaskanat\"", branch_zhaskanat_course: "<strong>Course:</strong> Robotics for kids", branch_zhaskanat_schedule: "<strong>Schedule:</strong> Sunday, 14:00-16:00", branch_zhaskanat_price: "Price: 32000₸ per month",
-                    contact_title: "Ready to start?", contact_subtitle1: "Sign up for a ", contact_subtitle_span: "free trial lesson!", contact_subtitle2: " Your child will meet the teacher, build their first robot, and you can ask any questions and see our academy from the inside.",
-                    contact_disclaimer: "The number of places in groups is limited, so be sure to reserve yours!",
-                    form_title: "Trial Lesson Application",
-                    form_parent_name_label: "Parent's name", form_parent_name_placeholder: "e.g., Jessica",
-                    form_phone_label: "Your phone number",
-                    form_child_name_label: "Child's name and age", form_child_name_placeholder: "e.g., Michael, 10",
-                    footer_main_office: "Main office:", footer_phone: "Phone:", footer_copyright: "&copy; 2025 RoLab. All rights reserved.",
-                    success_modal_title: "Thank you!", success_modal_text: "Your application has been received. We will contact you shortly to confirm.", success_modal_btn: "Great!",
-                    form_category_label: "Course Category", form_category_placeholder: "First, select a category...", form_course_label: "Desired Course", form_course_placeholder: "Select a course...", form_course_group_kids: "Courses for kids", form_course_robotics: "Robotics", form_course_arduino: "Arduino", form_course_roblox: "Game Development in Roblox", form_course_3d: "3D Modeling", form_course_python: "Python for Kids", form_course_fll: "Competitive Robotics (FLL)", form_course_group_adults: "Courses for adults", form_course_adults: "Computer Literacy", form_course_teachers: "Teacher Training", form_course_group_consult: "Need a consultation?", form_course_help: "Help me choose",
-                },
-                kz: {
-                    nav_about: "Біз туралы", nav_courses: "Курстар", nav_reviews: "Пікірлер", nav_branches: "Мекенжайлар", nav_signup_btn: "Жазылу",
-                    hero_title: "Гаджеттерге деген қызығушылықты<br class='hidden sm:block'> ", hero_title_span: "болашақ мамандығына айналдырыңыз",
-                    hero_subtitle: "RoLab академиясында сіздің балаңыз роботтарды құрастырып, бағдарламалауды үйренеді, логикасын дамытады және сұранысқа ие IT мамандығына дайындалады.",
-                    hero_button: "Сынақ сабағына жазылу",
-                    about_title: "Біздің курстар сіздің балаңызға өте ыңғайлы, егер ол:", about_subtitle: "Өзіңізді танып, балаңызға пайдалы хобби сыйлаңыз.",
-                    about_card1_title: "Көп уақытын телефонда өткізсе", about_card1_text: "Біз оның технологияға деген қызығушылығын жасампаздық арнаға бағыттаймыз.",
-                    about_card2_title: "LEGO мен конструкторларды жақсы көрсе", about_card2_text: "Бізде ол өз модельдерін код арқылы «жандандыра» алады.",
-                    about_card3_title: "Ойындар мен роботтар жасауды армандаса", about_card3_text: "Біз оған бұл үшін барлық қажетті білім мен құралдарды береміз.",
-                    about_card4_title: "Болашақ мамандығын алғысы келсе", about_card4_text: "Робототехника және бағдарламалау дағдылары — XXI ғасырдағы жетістіктің кілті.",
-                    courses_title: "Біздің оқыту бағдарламаларымыз", courses_subtitle: "Кез-келген жас пен дайындық деңгейіне қарай топ таңдаймыз.", course_btn_details: "Толығырақ",
-                    course_robotics_hero: "Робототехника", course_robotics_title: "Баршаға арналған робототехника", course_robotics_desc: "Балалар нағыз роботтарды құрастырып, бағдарламалауды үйренеді, логика мен инженерлік ойлауды дамытады.", course_robotics_schedule: "<strong>Кесте (СБ/ЖС):</strong> 11:00-13:00, 13:30-15:30, 16:00-18:00", course_robotics_price: "<strong>Бағасы:</strong> 32000₸ (аптасына 1 рет) | 50000₸ (аптасына 2 рет)",
-                    course_arduino_hero: "Arduino", course_arduino_title: "Arduino бағдарламалау", course_arduino_desc: "Электронды схемаларды құрастырып, оларды бағдарламалармен жандандырып, өзін инженер сезінгісі келетіндерге арналған курс.", course_arduino_schedule: "<strong>Кесте (ЖС):</strong> 13:30-15:30", course_arduino_price: "<strong>Бағасы:</strong> 32000₸ (аптасына 1 рет)",
-                    course_roblox_hero: "Roblox", course_roblox_title: "Roblox-та ойын әзірлеу", course_roblox_desc: "Балалар Roblox ойнағанды жақсы көреді, ал бізде олар өздерінің ойындарын жасап, әлемдер ойлап тауып, ережелер жазуды үйренеді.", course_roblox_schedule: "<strong>Кесте (ЖС):</strong> 16:00-18:00", course_roblox_price: "<strong>Бағасы:</strong> 32000₸ (аптасына 1 рет)",
-                    course_3d_hero: "3D-модельдеу", course_3d_title: "3D-модельдеу", course_3d_desc: "Бұл курста балалар 3D-де нысандарды — қарапайым фигуралардан бастап, кейіпкерлер, көліктер мен үйлерге дейін жасауды үйренеді.", course_3d_schedule: "<strong>Кесте (СБ):</strong> 13:30-15:30, 16:00-18:00", course_3d_price: "<strong>Бағасы:</strong> 32000₸ (аптасына 1 рет)",
-                    course_python_hero: "Python", course_python_title: "Балаларға арналған Python", course_python_desc: "Ең танымал бағдарламалау тілдерінің бірі, онда балалар бағдарламашы сияқты ойлауды және алғашқы ойындарын жасауды үйренеді.", course_python_schedule: "<strong>Кесте (СБ):</strong> 13:30-15:30, 16:00-18:00", course_python_price: "<strong>Бағасы:</strong> 32000₸ (аптасына 1 рет)",
-                    course_fll_banner: "ТӨЗІМДІЛЕРГЕ АРНАЛҒАН", course_fll_title: "Жарыстық робототехника", course_fll_desc: "FIRST LEGO League халықаралық жарыстарына қатысып, командалық жұмыс пен инженерлік ойлауды дамытқысы келетіндерге арналған.", course_fll_price_explore: "<strong>Explore (6-10 жас):</strong> 50000₸ (аптасына 2 рет)", course_fll_price_challenge: "<strong>Challenge (9-16 жас):</strong> 70000₸ (аптасына 3 рет)",
-                    course_adults_hero: "Ересектерге", course_adults_title: "Компьютерлік сауаттылық", course_adults_desc: "Технологиялар әлемінде өзіңізді сенімді сезінуге көмектеседі: негізгі бағдарламалардан онлайн-банкинг пен интернет қауіпсіздігіне дейін.", course_adults_schedule: "<strong>Кесте:</strong> Кешкі, келісім бойынша", course_adults_price: "<strong>Бағасы:</strong> 32000₸ (аптасына 1 рет) | 50000₸ (аптасына 2 рет)",
-                    course_teachers_hero: "Оқытушыларға", course_teachers_title: "Оқытушыларды даярлау", course_teachers_desc: "Технологиялар әлемінде тәлімгер болғысы келетіндерге арналған курс. Техникалық негіздер мен балалармен жұмыс істеу әдістемесін оқытамыз.", course_teachers_schedule: "<strong>Кесте:</strong> Жұмыс күндері, кешкі", course_teachers_price: "<strong>Бағасы:</strong> 300 000₸ курс үшін",
-                    reviews_title: "Оқушыларымыз бен олардың ата-аналары не дейді", reviews_subtitle: "Бізге ең қымбаттысын сеніп тапсырады.",
-                    review1_text: "\"Ұлым бірнеше жылдан бері барады: алдымен робототехникаға сұранды, содан кейін бағдарламалаумен айналысуды шешті. Әр сабаққа қуана-қуана барады, өйткені өте ұнайды)))\"",
-                    review2_text: "\"Жақында осында келе бастадық. Балаға ұнайды, балалар көпшіл. Рақмет 👍\"",
-                    review3_text: "\"Баламыз көптен бері айналысады, бізге бәрі ұнайды 🙏\"",
-                    branches_title: "Біздің мекенжайларымыз", branches_subtitle: "Өзіңізге ыңғайлы орналасқан жерді таңдаңыз.", address_word: "Мекенжайы:",
-                    branch_main_title: "\"Байзақ\" бас кеңсесі", branch_toggle_schedule: "Кестені көрсету/жасыру",
-                    schedule_robotics_title: "Робототехника (барлық жас)", schedule_robotics_time: "СБ/ЖС: 11:00-13:00, 13:30-15:30, 16:00-18:00", schedule_robotics_price1: "32000₸ <span class='font-normal'>/ аптасына 1 рет</span>", schedule_robotics_price2: "50000₸ <span class='font-normal'>/ аптасына 2 рет</span>",
-                    schedule_arduino_title: "Ардуино", schedule_arduino_time: "Жексенбі: 13:30-15:30", schedule_arduino_price: "32000₸ <span class='font-normal'>/ айына</span>",
-                    schedule_roblox_title: "Roblox-та ойын әзірлеу", schedule_roblox_time: "Жексенбі: 16:00-18:00", schedule_roblox_price: "32000₸ <span class='font-normal'>/ айына</span>",
-                    schedule_python_title: "Python-да бағдарламалау", schedule_python_time: "Сенбі: 13:30-15:30, 16:00-18:00", schedule_python_price: "32000₸ <span class='font-normal'>/ айына</span>",
-                    schedule_3d_title: "3D Модельдеу", schedule_3d_time: "Сенбі: 13:30-15:30, 16:00-18:00", schedule_3d_price: "32000₸ <span class='font-normal'>/ айына</span>",
-                    schedule_fll_title: "Жарыстық робототехника", schedule_fll_time: "Уақыт командамен келісіледі", schedule_fll_price_explore: "Explore: 50000₸", schedule_fll_price_challenge: "Challenge: 70000₸",
-                    schedule_adults_title: "Комп. сауаттылық (ересектерге)", schedule_adults_time: "Кешкі, келісім бойынша", schedule_adults_price1: "32000₸ <span class='font-normal'>/ аптасына 1 рет</span>", schedule_adults_price2: "50000₸ <span class='font-normal'>/ аптасына 2 рет</span>",
-                    schedule_teachers_title: "Оқытушыларға арналған курс", schedule_teachers_time: "Жұмыс күндері, кешкі уақыт", schedule_teachers_price: "300000₸ <span class='font-normal'>/ курс үшін</span>",
-                    branch_duman_title: "\"Думан\" филиалы", branch_duman_course: "<strong>Курс:</strong> Балаларға арналған робототехника", branch_duman_schedule: "<strong>Кесте:</strong> Сенбі, 12:00-14:00", branch_duman_price: "Бағасы: 32000₸ айына",
-                    branch_zhaskanat_title: "\"Жасқанат\" филиалы", branch_zhaskanat_course: "<strong>Курс:</strong> Балаларға арналған робототехника", branch_zhaskanat_schedule: "<strong>Кесте:</strong> Жексенбі, 14:00-16:00", branch_zhaskanat_price: "Бағасы: 32000₸ айына",
-                    contact_title: "Бастауға дайынсыз ба?", contact_subtitle1: "", contact_subtitle_span: "Тегін сынақ сабағына", contact_subtitle2: " жазылыңыз! Сіздің балаңыз оқытушымен танысады, алғашқы роботын құрастырады, ал сіз барлық сұрақтарыңызды қойып, біздің академияны ішінен көре аласыз.",
-                    contact_disclaimer: "Топтардағы орындар саны шектеулі, өз орныңызды брондап үлгеріңіз!",
-                    form_title: "Сынақ сабағына өтінім",
-                    form_parent_name_label: "Ата-ананың аты", form_parent_name_placeholder: "Мысалы, Айнұр",
-                    form_phone_label: "Сіздің телефоныңыз",
-                    form_child_name_label: "Баланың аты мен жасы", form_child_name_placeholder: "Мысалы, Арман, 10 жас",
-                    footer_main_office: "Бас кеңсе:", footer_phone: "Телефон:", footer_copyright: "&copy; 2025 RoLab. Барлық құқықтар қорғалған.",
-                    success_modal_title: "Рақмет!", success_modal_text: "Сіздің өтініміңіз қабылданды. Растау үшін жақын арада сізбен хабарласамыз.", success_modal_btn: "Керемет!",
-                    form_category_label: "Курс категориясы", form_category_placeholder: "Алдымен категорияны таңдаңыз...", form_course_label: "Қалаған курс", form_course_placeholder: "Курсты таңдаңыз...", form_course_group_kids: "Балаларға арналған курстар", form_course_robotics: "Робототехника", form_course_arduino: "Arduino", form_course_roblox: "Roblox-та ойын әзірлеу", form_course_3d: "3D-модельдеу", form_course_python: "Балаларға арналған Python", form_course_fll: "Жарыстық робототехника (FLL)", form_course_group_adults: "Ересектерге арналған курстар", form_course_adults: "Компьютерлік сауаттылық", form_course_teachers: "Оқытушыларды даярлау", form_course_group_consult: "Кеңес керек пе?", form_course_help: "Таңдауға көмектесіңіз",
-                }
-            };
-            
-            const courseDetailsMultiLang = { ru: { robotics:{title:"Программа Курса «Робототехника для детей»",content:`<h4>Модуль 1. Первые шаги в робототехнике (WeDo 2.0, 1-й год)</h4><p>Конструирование по пошаговым инструкциям, первые понятия о шестернях и движении. Знакомство с моторами и датчиками. Визуальное блочное программирование.</p><p><strong>Результат:</strong> ребёнок понимает основы, умеет собрать робота по инструкции и оживить его программой.</p><h4>Модуль 2. Переход к самостоятельности (WeDo 2.0 + Scratch, 2-й год)</h4><p>Конструирование с элементами творчества. Использование нескольких датчиков. Первые условия и циклы в Scratch. Простые инженерные задачи.</p><p><strong>Результат:</strong> ребёнок учится мыслить алгоритмами и добавлять свои решения.</p><h4>Модуль 3. Современные роботы (SPIKE Prime, 3-й год)</h4><p>Переход на SPIKE Prime: больше деталей, сквозные моторы. Сборка роботов с несколькими моторами. Программирование в Scratch-среде для SPIKE.</p><p><strong>Результат:</strong> ребёнок умеет собирать устойчивые конструкции и работать с несколькими механизмами.</p><h4>Модуль 4. LEGO Mindstorms EV3 (4-й год)</h4><p>Знакомство с LEGO EV3, сборка сложных роботов. Программирование в среде EV3. Командная работа над проектами и основы стратегий FLL.</p><p><strong>Результат:</strong> ребёнок умеет работать с EV3, готовит роботов для соревнований и учится командному взаимодействию.</p>`}, arduino:{title:"Программа курса «Arduino»",content:`<h4>Знакомство с электроникой и Arduino</h4><p>Что такое электричество, ток, напряжение. Макетная плата и базовые компоненты: светодиоды, кнопки, резисторы. Первые программы: мигающий светодиод, кнопка запуска.</p><h4>Работа с датчиками</h4><p>Подключение датчиков освещённости, температуры, движения, звука. Использование условий в программах. Создание интерактивных проектов: умная лампа, сигнализация, термометр.</p><h4>Продвинутые проекты и модули</h4><p>Использование Bluetooth, дисплеев, звуковых модулей. Командные проектные работы и подготовка к соревнованиям.</p>`}, roblox:{title:"Программа курса «Разработка игр в Roblox Studio»",content:`<h4>Введение в Roblox Studio</h4><p>Знакомство с интерфейсом, создание и настройка игровых объектов. Первые мини-игры: простая карта, лабиринт.</p><h4>Основы геймдизайна</h4><p>Как сделать игру интересной: баланс, задания, награды. Создание простых уровней и сюжетов.</p><h4>Программирование в Roblox (Lua)</h4><p>Первые скрипты: движение, анимация, события. Управление персонажем, взаимодействие с предметами.</p><h4>Онлайн-миры и командная работа</h4><p>Работа с мультиплеером, построение командных проектов, тестирование и доработка игр.</p><h4>Финальный проект и публикация игры</h4><p>Доработка графики и интерфейса, оптимизация и публикация игры на платформе Roblox.</p>`}, '3d':{title:"Программа курса «3D-моделирование в Blender»",content:`<h4>Первые шаги в Blender</h4><p>Интерфейс и навигация, базовые примитивы и их трансформация. Простые проекты: домик, робот, мебель.</p><h4>Моделирование и детализация</h4><p>Редактирование форм, экструзия, сглаживание, модификаторы. Создание сложных объектов (техника, персонажи).</p><h4>Материалы и текстуры</h4><p>Работа с цветом, основы UV-развёртки, добавление текстур для реалистичности.</p><h4>Освещение и рендеринг</h4><p>Как работает свет в 3D-сцене, настройка камер, первые качественные рендеры.</p><h4>Анимация в Blender</h4><p>Основы таймлайна и ключевых кадров, анимация движения объекта, создание коротких роликов.</p><h4>Финальный проект</h4><p>Создание полноценной сцены, рендер итоговой работы и подготовка портфолио.</p>`}, python:{title:"Программа курса «Программирование на Python»",content:`<h4>Введение в программирование</h4><p>Первая программа, переменные, простые операции (калькулятор, генератор фраз).</p><h4>Условные конструкции и циклы</h4><p>Ветвления: if-else, циклы for и while. Мини-проекты: угадай число, простые текстовые игры.</p><h4>Функции и работа с данными</h4><p>Создание функций, списки и словари. Проекты: генератор паролей, опросник.</p><h4>Работа с библиотеками</h4><p>Модули random, math, time. Визуализация данных с matplotlib.</p><h4>Создание игр с Pygame</h4><p>Работа с окнами, изображениями и движением объектов. Простая игра: «Лови предметы».</p><h4>Финальный проект</h4><p>Каждый ученик выбирает идею (игра, чат-бот, программа) и разрабатывает её с применением изученных инструментов.</p>`}, fll:{title:"Программа курса «Соревновательная робототехника FLL»",content:`<h4>Модуль 1. Знакомство с FLL</h4><p>Что такое FIRST LEGO League, категории Explore и Challenge, формат турнира, основные ценности.</p><h4>Модуль 2. Основы командной работы</h4><p>Распределение ролей, навыки коммуникации, тренинги на взаимодействие.</p><h4>Модуль 3. Проект и исследование</h4><p>Как выбрать тему, методы поиска и анализа информации, подготовка презентации и защита перед жюри.</p><h4>Модуль 4. Робот и миссии</h4><p><b>Explore:</b> постройка простых моделей и первые шаги в программировании. <b>Challenge:</b> сборка робота на SPIKE Prime/EV3, навесные модули, использование датчиков и стратегия прохождения поля.</p><h4>Модуль 5. Подготовка к турниру</h4><p>Тренировки по выполнению миссий, отработка стабильности программы, подготовка к Core Values-сессии.</p><h4>Модуль 6. Участие в FLL</h4><p>Симуляция турнира внутри академии, участие в региональном этапе, разбор результатов.</p>`}, adults:{title:"Программа курса «Компьютерная грамотность для взрослых»",content:`<h4>Модуль 1. Основы работы с компьютером</h4><p>Операционная система, рабочий стол, мышь и клавиатура.</p><h4>Модуль 2. Файлы и папки</h4><p>Создание, сохранение, поиск, копирование файлов и папок. Работа с флешкой.</p><h4>Модуль 3. Интернет и безопасность</h4><p>Работа с браузером, электронная почта, онлайн-сервисы (госуслуги, банкинг), кибербезопасность.</p><h4>Модуль 4. Работа с документами</h4><p>Word (текст), Excel (таблицы), PowerPoint (презентации).</p><h4>Модуль 5. Цифровая коммуникация</h4><p>Мессенджеры (WhatsApp, Telegram), видеозвонки (Zoom, Google Meet).</p><h4>Модуль 6. Практика</h4><p>Решение типичных задач: написать письмо, оформить документ, работа с облачными сервисами.</p>`}, teachers:{title:"Программа курса «Подготовка преподавателей робототехники»",content:`<h4>Модуль 1. Введение</h4><p>Цели и задачи робототехники, обзор платформ LEGO, Arduino, 3D, роль преподавателя.</p><h4>Модуль 2-5. Работа с платформами</h4><p>Детальное изучение LEGO WeDo 2.0, SPIKE Prime, EV3 и Arduino, включая конструирование, программирование и методику объяснения для разных возрастов.</p><h4>Модуль 6. Методика преподавания</h4><p>Возрастные особенности, построение урока, мотивация, работа с родителями.</p><h4>Модуль 7. Подготовка к соревнованиям</h4><p>Форматы FLL Explore и Challenge, роль тренера, психология соревнований.</p><h4>Модуль 8. Ответственность и безопасность</h4><p>Техника безопасности, материальная ответственность, хранение оборудования.</p>`} }, en: { robotics:{title:"Course Program: Robotics for Kids",content:`<h4>Module 1. First Steps in Robotics (WeDo 2.0, 1st Year)</h4><p>Building with step-by-step instructions, initial concepts of gears and motion. Introduction to motors and sensors. Visual block-based programming.</p><p><strong>Result:</strong> The child understands the basics, can assemble a robot from instructions, and bring it to life with a program.</p><h4>Module 2. Transition to Independence (WeDo 2.0 + Scratch, 2nd Year)</h4><p>Building with creative elements. Using multiple sensors. First conditions and loops in Scratch. Simple engineering tasks.</p><p><strong>Result:</strong> The child learns to think in algorithms and add their own solutions.</p><h4>Module 3. Modern Robots (SPIKE Prime, 3rd Year)</h4><p>Transition to SPIKE Prime: more parts, pass-through motors. Building robots with multiple motors. Programming in the SPIKE Scratch environment.</p><p><strong>Result:</strong> The child can build stable structures and work with multiple mechanisms.</p><h4>Module 4. LEGO Mindstorms EV3 (4th Year)</h4><p>Introduction to LEGO EV3, building complex robots. Programming in the EV3 environment. Teamwork on projects and basics of FLL strategies.</p><p><strong>Result:</strong> The child can work with EV3, prepares robots for competitions, and learns teamwork.</p>`}, arduino:{title:"Course Program: Arduino",content:`<h4>Introduction to Electronics and Arduino</h4><p>What is electricity, current, voltage. Breadboard and basic components: LEDs, buttons, resistors. First programs: blinking LED, button start.</p><h4>Working with Sensors</h4><p>Connecting light, temperature, motion, and sound sensors. Using conditions in programs. Creating interactive projects: smart lamp, alarm, thermometer.</p><h4>Advanced Projects and Modules</h4><p>Using Bluetooth, displays, sound modules. Team-based project work and preparation for competitions.</p>`}, roblox:{title:"Course Program: Game Development in Roblox Studio",content:`<h4>Introduction to Roblox Studio</h4><p>Familiarization with the interface, creating and configuring game objects. First mini-games: simple map, maze.</p><h4>Game Design Basics</h4><p>How to make a game interesting: balance, tasks, rewards. Creating simple levels and stories.</p><h4>Programming in Roblox (Lua)</h4><p>First scripts: movement, animation, events. Character control, interaction with objects.</p><h4>Online Worlds and Teamwork</h4><p>Working with multiplayer, building team projects, testing and refining games.</p><h4>Final Project and Game Publication</h4><p>Refining graphics and interface, optimization, and publishing the game on the Roblox platform.</p>`}, '3d':{title:"Course Program: 3D Modeling in Blender",content:`<h4>First Steps in Blender</h4><p>Interface and navigation, basic primitives and their transformation. Simple projects: a house, a robot, furniture.</p><h4>Modeling and Detailing</h4><p>Editing shapes, extrusion, smoothing, modifiers. Creating complex objects (vehicles, characters).</p><h4>Materials and Textures</h4><p>Working with color, basics of UV mapping, adding textures for realism.</p><h4>Lighting and Rendering</h4><p>How light works in a 3D scene, setting up cameras, first high-quality renders.</p><h4>Animation in Blender</h4><p>Basics of the timeline and keyframes, animating object movement, creating short clips.</p><h4>Final Project</h4><p>Creating a complete scene, rendering the final work, and preparing a portfolio.</p>`}, python:{title:"Course Program: Programming in Python",content:`<h4>Introduction to Programming</h4><p>First program, variables, simple operations (calculator, phrase generator).</p><h4>Conditional Statements and Loops</h4><p>Branching: if-else, loops for and while. Mini-projects: guess the number, simple text games.</p><h4>Functions and Data Handling</h4><p>Creating functions, lists, and dictionaries. Projects: password generator, questionnaire.</p><h4>Working with Libraries</h4><p>Modules like random, math, time. Data visualization with matplotlib.</p><h4>Creating Games with Pygame</h4><p>Working with windows, images, and object movement. Simple game: "Catch the Items".</p><h4>Final Project</h4><p>Each student chooses an idea (game, chatbot, program) and develops it using the tools learned.</p>`}, fll:{title:"Course Program: Competitive Robotics FLL",content:`<h4>Module 1. Introduction to FLL</h4><p>What is FIRST LEGO League, Explore and Challenge categories, tournament format, core values.</p><h4>Module 2. Teamwork Fundamentals</h4><p>Role distribution, communication skills, team-building exercises.</p><h4>Module 3. Project and Research</h4><p>How to choose a topic, methods for finding and analyzing information, preparing and defending a presentation before judges.</p><h4>Module 4. The Robot and Missions</h4><p><b>Explore:</b> building simple models and first steps in programming. <b>Challenge:</b> building a robot with SPIKE Prime/EV3, attachments, using sensors, and strategy for the game field.</p><h4>Module 5. Tournament Preparation</h4><p>Mission run practice, ensuring program stability, preparing for the Core Values session.</p><h4>Module 6. Participating in FLL</h4><p>Tournament simulation within the academy, participation in the regional stage, post-event analysis.</p>`}, adults:{title:"Course Program: Computer Literacy for Adults",content:`<h4>Module 1. Computer Basics</h4><p>Operating system, desktop, mouse, and keyboard.</p><h4>Module 2. Files and Folders</h4><p>Creating, saving, finding, and copying files and folders. Using a USB drive.</p><h4>Module 3. Internet and Security</h4><p>Using a browser, email, online services (government, banking), cybersecurity.</p><h4>Module 4. Working with Documents</h4><p>Word (text), Excel (spreadsheets), PowerPoint (presentations).</p><h4>Module 5. Digital Communication</h4><p>Messengers (WhatsApp, Telegram), video calls (Zoom, Google Meet).</p><h4>Module 6. Practice</h4><p>Solving common tasks: writing an email, formatting a document, using cloud services.</p>`}, teachers:{title:"Course Program: Robotics Teacher Training",content:`<h4>Module 1. Introduction</h4><p>Goals and objectives of robotics, overview of LEGO, Arduino, 3D platforms, the role of the teacher.</p><h4>Modules 2-5. Working with Platforms</h4><p>Detailed study of LEGO WeDo 2.0, SPIKE Prime, EV3, and Arduino, including construction, programming, and teaching methods for different age groups.</p><h4>Module 6. Teaching Methodology</h4><p>Age-specific characteristics, lesson planning, motivation, working with parents.</p><h4>Module 7. Competition Preparation</h4><p>FLL Explore and Challenge formats, the role of a coach, psychology of competitions.</p><h4>Module 8. Responsibility and Safety</h4><p>Safety procedures, material responsibility, equipment storage.</p>`} }, kz: { robotics:{title:"«Балаларға арналған робототехника» курсының бағдарламасы",content:`<h4>1-модуль. Робототехникадағы алғашқы қадамдар (WeDo 2.0, 1-ші жыл)</h4><p>Қадамдық нұсқаулар бойынша құрастыру, тісті доңғалақтар мен қозғалыс туралы алғашқы түсініктер. Моторлармен және датчиктермен танысу. Визуалды блоктық бағдарламалау.</p><p><strong>Нәтиже:</strong> бала негіздерді түсінеді, роботты нұсқаулық бойынша құрастыра алады және оны бағдарламамен жандандыра алады.</p><h4>2-модуль. Өз бетінше жұмыс істеуге көшу (WeDo 2.0 + Scratch, 2-ші жыл)</h4><p>Шығармашылық элементтері бар құрастыру. Бірнеше датчикті пайдалану. Scratch-тағы алғашқы шарттар мен циклдер. Қарапайым инженерлік есептер.</p><p><strong>Нәтиже:</strong> бала алгоритмдермен ойлауды және өз шешімдерін қосуды үйренеді.</p><h4>3-модуль. Заманауи роботтар (SPIKE Prime, 3-ші жыл)</h4><p>SPIKE Prime-ға көшу: көбірек бөлшектер, өтетін моторлар. Бірнеше моторлы роботтарды құрастыру. SPIKE-қа арналған Scratch ортасында бағдарламалау.</p><p><strong>Нәтиже:</strong> бала тұрақты конструкцияларды құрастыра алады және бірнеше механизммен жұмыс істей алады.</p><h4>4-модуль. LEGO Mindstorms EV3 (4-ші жыл)</h4><p>LEGO EV3-пен танысу, күрделі роботтарды құрастыру. EV3 ортасында бағдарламалау. Жобалар бойынша командалық жұмыс және FLL стратегияларының негіздері.</p><p><strong>Нәтиже:</strong> бала EV3-пен жұмыс істей алады, роботтарды жарыстарға дайындайды және командалық өзара әрекеттесуді үйренеді.</p>`}, arduino:{title:"«Arduino» курсының бағдарламасы",content:`<h4>Электроника және Arduino-мен танысу</h4><p>Электр, ток, кернеу деген не? Макеттік тақта және негізгі компоненттер: жарық диодтары, түймелер, резисторлар. Алғашқы бағдарламалар: жыпылықтайтын жарық диоды, іске қосу түймесі.</p><h4>Датчиктермен жұмыс</h4><p>Жарық, температура, қозғалыс, дыбыс датчиктерін қосу. Бағдарламаларда шарттарды пайдалану. Интерактивті жобалар жасау: ақылды шам, дабыл, термометр.</p><h4>Күрделі жобалар мен модульдер</h4><p>Bluetooth, дисплейлер, дыбыс модульдерін пайдалану. Командалық жобалық жұмыстар және жарыстарға дайындық.</p>`}, roblox:{title:"«Roblox Studio-да ойын әзірлеу» курсының бағдарламасы",content:`<h4>Roblox Studio-ға кіріспе</h4><p>Интерфейспен танысу, ойын нысандарын құру және баптау. Алғашқы шағын ойындар: қарапайым карта, лабиринт.</p><h4>Геймдизайн негіздері</h4><p>Ойынды қалай қызықты етуге болады: тепе-теңдік, тапсырмалар, марапаттар. Қарапайым деңгейлер мен сюжеттер құру.</p><h4>Roblox-та бағдарламалау (Lua)</h4><p>Алғашқы скрипттер: қозғалыс, анимация, оқиғалар. Кейіпкерді басқару, заттармен өзара әрекеттесу.</p><h4>Онлайн әлемдер және командалық жұмыс</h4><p>Мультиплеермен жұмыс, командалық жобалар құру, ойындарды тестілеу және жетілдіру.</p><h4>Қорытынды жоба және ойынды жариялау</h4><p>Графика мен интерфейсті жетілдіру, оңтайландыру және ойынды Roblox платформасында жариялау.</p>`}, '3d':{title:"«Blender-де 3D-модельдеу» курсының бағдарламасы",content:`<h4>Blender-дегі алғашқы қадамдар</h4><p>Интерфейс және навигация, негізгі примитивтер және оларды трансформациялау. Қарапайым жобалар: үй, робот, жиһаз.</p><h4>Модельдеу және егжей-тегжейлі пысықтау</h4><p>Пішіндерді редакциялау, экструзия, тегістеу, модификаторлар. Күрделі нысандарды құру (техника, кейіпкерлер).</p><h4>Материалдар және текстуралар</h4><p>Түспен жұмыс, UV-карта негіздері, шынайылық үшін текстуралар қосу.</p><h4>Жарықтандыру және рендеринг</h4><p>3D-сахнада жарық қалай жұмыс істейді, камераларды баптау, алғашқы сапалы рендерлер.</p><h4>Blender-де анимация</h4><p>Таймлайн және негізгі кадрлар негіздері, нысан қозғалысының анимациясы, қысқа роликтер жасау.</p><h4>Қорытынды жоба</h4><p>Толыққанды сахна құру, қорытынды жұмысты рендерлеу және портфолио дайындау.</p>`}, python:{title:"«Python-да бағдарламалау» курсының бағдарламасы",content:`<h4>Бағдарламалауға кіріспе</h4><p>Алғашқы бағдарлама, айнымалылар, қарапайым операциялар (калькулятор, сөз тіркестерінің генераторы).</p><h4>Шартты конструкциялар және циклдер</h4><p>Тармақталу: if-else, for және while циклдері. Шағын жобалар: санды тап, қарапайым мәтіндік ойындар.</p><h4>Функциялар және деректермен жұмыс</h4><p>Функциялар құру, тізімдер мен сөздіктер. Жобалар: құпия сөз генераторы, сауалнама.</p><h4>Кітапханалармен жұмыс</h4><p>random, math, time модульдері. Matplotlib көмегімен деректерді визуализациялау.</p><h4>Pygame-мен ойын жасау</h4><p>Терезелермен, суреттермен және нысандардың қозғалысымен жұмыс. Қарапайым ойын: «Заттарды ұста».</p><h4>Қорытынды жоба</h4><p>Әр оқушы идея таңдайды (ойын, чат-бот, бағдарлама) және оны үйренген құралдарды қолдана отырып әзірлейді.</p>`}, fll:{title:"«Жарыстық робототехника FLL» курсының бағдарламасы",content:`<h4>1-модуль. FLL-мен танысу</h4><p>FIRST LEGO League деген не, Explore және Challenge санаттары, турнир форматы, негізгі құндылықтар.</p><h4>2-модуль. Командалық жұмыс негіздері</h4><p>Рөлдерді бөлу, қарым-қатынас дағдылары, өзара әрекеттесуге арналған тренингтер.</p><h4>3-модуль. Жоба және зерттеу</h4><p>Тақырыпты қалай таңдау керек, ақпаратты іздеу және талдау әдістері, презентация дайындау және қазылар алқасының алдында қорғау.</p><h4>4-модуль. Робот және миссиялар</h4><p><b>Explore:</b> қарапайым модельдер құрастыру және бағдарламалаудағы алғашқы қадамдар. <b>Challenge:</b> SPIKE Prime/EV3-те робот құрастыру, аспалы модульдер, датчиктерді пайдалану және алаңнан өту стратегиясы.</p><h4>5-модуль. Турнирге дайындық</h4><p>Миссияларды орындау бойынша жаттығулар, бағдарламаның тұрақтылығын пысықтау, Core Values сессиясына дайындық.</p><h4>6-модуль. FLL-ге қатысу</h4><p>Академия ішінде турнирді симуляциялау, аймақтық кезеңге қатысу, нәтижелерді талдау.</p>`}, adults:{title:"«Ересектерге арналған компьютерлік сауаттылық» курсының бағдарламасы",content:`<h4>1-модуль. Компьютермен жұмыс істеу негіздері</h4><p>Операциялық жүйе, жұмыс үстелі, тышқан және пернетақта.</p><h4>2-модуль. Файлдар мен қалталар</h4><p>Файлдар мен қалталарды құру, сақтау, іздеу, көшіру. Флешкамен жұмыс.</p><h4>3-модуль. Интернет және қауіпсіздік</h4><p>Браузермен жұмыс, электрондық пошта, онлайн-сервистер (мемлекеттік қызметтер, банкинг), киберқауіпсіздік.</p><h4>4-модуль. Құжаттармен жұмыс</h4><p>Word (мәтін), Excel (кестелер), PowerPoint (презентациялар).</p><h4>5-модуль. Цифрлық коммуникация</h4><p>Мессенджерлер (WhatsApp, Telegram), видеоқоңыраулар (Zoom, Google Meet).</p><h4>6-модуль. Тәжірибе</h4><p>Типтік тапсырмаларды шешу: хат жазу, құжатты ресімдеу, бұлттық сервистермен жұмыс.</p>`}, teachers:{title:"«Робототехника оқытушыларын даярлау» курсының бағдарламасы",content:`<h4>1-модуль. Кіріспе</h4><p>Робототехниканың мақсаттары мен міндеттері, LEGO, Arduino, 3D платформаларына шолу, оқытушының рөлі.</p><h4>2-5 модульдер. Платформалармен жұмыс</h4><p>LEGO WeDo 2.0, SPIKE Prime, EV3 және Arduino-ны егжей-тегжейлі зерттеу, соның ішінде құрастыру, бағдарламалау және әртүрлі жастағыларға түсіндіру әдістемесі.</p><h4>6-модуль. Оқыту әдістемесі</h4><p>Жас ерекшеліктері, сабақты құру, мотивация, ата-аналармен жұмыс.</p><h4>7-модуль. Жарыстарға дайындық</h4><p>FLL Explore және Challenge форматтары, жаттықтырушының рөлі, жарыс психологиясы.</p><h4>8-модуль. Жауапкершілік және қауіпсіздік</h4><p>Қауіпсіздік техникасы, материалдық жауапкершілік, жабдықтарды сақтау.</p>`} } };
+<!-- Project lightbox -->
+<dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+    <button class="lb-close" id="lb-close" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <img id="lb-img" src="" alt="">
+    <div class="lb-body">
+        <div class="lb-tags" id="lb-tags"></div>
+        <h3 id="lb-title"></h3>
+        <p id="lb-text"></p>
+        <a href="#contact" class="btn btn-primary" id="lb-cta">Хочу так же — на пробный урок</a>
+    </div>
+</dialog>
 
-            AOS.init({ duration: 800, once: true });
-            
-            const langButton = document.getElementById('lang-button');
-            const langDropdown = document.getElementById('lang-dropdown');
-            const currentLangSpan = document.getElementById('current-lang');
-            const langOptions = document.querySelectorAll('.lang-option');
-            const langButtonMobile = document.getElementById('lang-button-mobile');
-            const langDropdownMobile = document.getElementById('lang-dropdown-mobile');
-            const currentLangSpanMobile = document.getElementById('current-lang-mobile');
-            const langOptionsMobile = document.querySelectorAll('.lang-option-mobile');
-            
-            const setLanguage = (lang) => {
-                if (!translations[lang]) return;
-                document.documentElement.lang = lang;
-                
-                document.querySelectorAll('[data-lang-key]').forEach(element => {
-                    const key = element.getAttribute('data-lang-key');
-                    if (translations[lang][key] !== undefined) element.innerHTML = translations[lang][key];
-                });
-                
-                document.querySelectorAll('[data-lang-key-placeholder]').forEach(element => {
-                    const key = element.getAttribute('data-lang-key-placeholder');
-                    if (translations[lang][key] !== undefined) element.placeholder = translations[lang][key];
-                });
-
-                const langDisplay = { ru: 'RU', en: 'EN', kz: 'KZ' };
-                const langDisplayFull = { ru: 'Русский', en: 'English', kz: 'Қазақша' };
-                currentLangSpan.textContent = langDisplay[lang] || 'RU';
-                currentLangSpanMobile.textContent = langDisplayFull[lang] || 'Русский';
-
-                localStorage.setItem('language', lang);
-                langDropdown.classList.add('hidden');
-                langDropdownMobile.classList.add('hidden');
-                document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: lang } }));
-            };
-
-            const toggleDropdown = (dropdown) => dropdown.classList.toggle('hidden');
-            langButton.addEventListener('click', (e) => { e.stopPropagation(); toggleDropdown(langDropdown); });
-            langButtonMobile.addEventListener('click', (e) => { e.stopPropagation(); toggleDropdown(langDropdownMobile); });
-            document.addEventListener('click', () => {
-                langDropdown.classList.add('hidden');
-                langDropdownMobile.classList.add('hidden');
-            });
-            const handleLangOptionClick = (e) => {
-                e.preventDefault();
-                setLanguage(e.currentTarget.getAttribute('data-lang'));
-            };
-            langOptions.forEach(option => option.addEventListener('click', handleLangOptionClick));
-            langOptionsMobile.forEach(option => option.addEventListener('click', handleLangOptionClick));
-
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-            const menuOpenIcon = document.getElementById('menu-open-icon');
-            const menuCloseIcon = document.getElementById('menu-close-icon');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                menuOpenIcon.classList.toggle('hidden');
-                menuCloseIcon.classList.toggle('hidden');
-            });
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    menuOpenIcon.classList.remove('hidden');
-                    menuCloseIcon.classList.add('hidden');
-                });
-            });
-
-            const scheduleToggleButton = document.getElementById('schedule-toggle-button');
-            const scheduleDetails = document.getElementById('schedule-details');
-            const scheduleArrow = document.getElementById('schedule-arrow');
-            if(scheduleToggleButton) {
-                scheduleToggleButton.addEventListener('click', () => {
-                    scheduleDetails.classList.toggle('hidden');
-                    scheduleArrow.classList.toggle('rotate-180');
-                });
-            }
-
-            const trialForm = document.getElementById('trial-form');
-            const successModal = document.getElementById('success-modal');
-            const closeModalButton = document.getElementById('close-modal-button');
-            if(trialForm) {
-                trialForm.addEventListener('submit', (e) => {
-                    const form = e.target;
-                    const submitButton = form.querySelector('button[type="submit"]');
-                    submitButton.disabled = true;
-                    const originalButtonText = submitButton.textContent;
-                    submitButton.textContent = '...';
-                    
-                    // Form submits naturally via iframe (action/target set in HTML)
-                    // Show success after a short delay to allow the iframe submission
-                    setTimeout(() => {
-                        successModal.classList.remove('hidden');
-                        form.reset();
-                        courseWrapper.classList.add('hidden');
-                        categorySelect.classList.add('text-gray-400');
-                        categorySelect.classList.remove('text-gray-800');
-                        courseSelect.classList.add('text-gray-400');
-                        courseSelect.classList.remove('text-gray-800');
-                        submitButton.disabled = false;
-                        submitButton.textContent = originalButtonText;
-                    }, 1500);
-                });
-            }
-            function hideSuccessModal() { successModal.classList.add('hidden'); }
-            if(closeModalButton) closeModalButton.addEventListener('click', hideSuccessModal);
-            if(successModal) successModal.addEventListener('click', (e) => { if (e.target === successModal) hideSuccessModal(); });
-            
-            const courseModal = document.getElementById('course-modal');
-            const courseModalContent = document.getElementById('course-modal-content');
-            const openCourseModalButtons = document.querySelectorAll('.open-course-modal');
-            const closeCourseModalButton = document.getElementById('close-course-modal-button');
-            openCourseModalButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const courseKey = button.dataset.course;
-                    const currentLang = localStorage.getItem('language') || 'ru';
-                    const details = courseDetailsMultiLang[currentLang][courseKey];
-                    if (details) {
-                        courseModalContent.innerHTML = `<h2 class="text-2xl sm:text-3xl font-bold text-gradient-logo mb-6">${details.title}</h2>${details.content}`;
-                        courseModal.classList.remove('hidden');
-                    }
-                });
-            });
-            function closeCourseModal() { courseModal.classList.add('hidden'); }
-            if(closeCourseModalButton) closeCourseModalButton.addEventListener('click', closeCourseModal);
-            if(courseModal) courseModal.addEventListener('click', (e) => { if(e.target === courseModal) closeCourseModal(); });
-            
-            const coursesData = {
-                kids: [ { value: "Робототехника", key: "form_course_robotics" }, { value: "Arduino", key: "form_course_arduino" }, { value: "Разработка игр в Roblox", key: "form_course_roblox" }, { value: "3D-моделирование", key: "form_course_3d" }, { value: "Python для детей", key: "form_course_python" }, { value: "Соревновательная робототехника (FLL)", key: "form_course_fll" } ],
-                adults: [ { value: "Компьютерная грамотность", key: "form_course_adults" }, { value: "Подготовка преподавателей", key: "form_course_teachers" } ],
-                consult: [ { value: "Помогите с выбором", key: "form_course_help" } ]
-            };
-            const categorySelect = document.getElementById('category-selection');
-            const courseSelect = document.getElementById('course-selection');
-            const courseWrapper = document.getElementById('course-wrapper');
-
-            const populateCourses = () => {
-                const selectedCategory = categorySelect.value;
-                const currentLang = localStorage.getItem('language') || 'ru';
-                courseSelect.innerHTML = '';
-                courseSelect.required = false;
-                if (!selectedCategory) {
-                    courseWrapper.classList.add('hidden');
-                    return;
-                }
-                courseWrapper.classList.remove('hidden');
-                const courses = coursesData[selectedCategory];
-                if (courses) {
-                    const placeholderOption = document.createElement('option');
-                    placeholderOption.value = "";
-                    placeholderOption.textContent = translations[currentLang]['form_course_placeholder'] || 'Выберите курс...';
-                    placeholderOption.disabled = true;
-                    placeholderOption.selected = true;
-                    courseSelect.appendChild(placeholderOption);
-                    courses.forEach(course => {
-                        const option = document.createElement('option');
-                        option.value = course.value;
-                        option.textContent = translations[currentLang][course.key] || course.value;
-                        courseSelect.appendChild(option);
-                    });
-                    courseSelect.required = true;
-                    if (courses.length === 1) {
-                         courseSelect.value = courses[0].value;
-                         courseSelect.classList.remove('text-gray-400');
-                         courseSelect.classList.add('text-gray-800');
-                    } else {
-                         courseSelect.classList.add('text-gray-400');
-                         courseSelect.classList.remove('text-gray-800');
-                    }
-                }
-            };
-            
-            categorySelect.addEventListener('change', populateCourses);
-            document.addEventListener('languageChanged', populateCourses);
-            categorySelect.addEventListener('change', (e) => { if (e.target.value) { e.target.classList.remove('text-gray-400'); e.target.classList.add('text-gray-800'); } });
-            courseSelect.addEventListener('change', (e) => { if (e.target.value) { e.target.classList.remove('text-gray-400'); e.target.classList.add('text-gray-800'); } });
-            
-            const savedLang = localStorage.getItem('language') || 'ru';
-            setLanguage(savedLang);
-        });
-    </script>
+<script src="js/main.js" defer></script>
 </body>
-
 </html>
-
-
-
